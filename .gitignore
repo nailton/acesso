@@ -26,3 +26,8 @@ readme.rst
 */logs/!index.html
 */cache/*
 */cache/!index.html
+
+###Grocery Crud###
+assets/uploads/
+example.php
+examples.php
