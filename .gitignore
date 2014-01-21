@@ -1,0 +1,28 @@
+syntax: glob
+community-auth.sublime-project
+community-auth.sublime-workspace
+config/development
+#config/production
+brute.php
+mywot56f6e602e1a3f243f0c9.html
+custom_uploader/
+profile_images/
+licenses/*
+user_guide/*
+.hg_archival.txt
+readme.rst
+.hgtags
+
+###SublimeText###
+
+# SublimeText project files
+*.sublime-project
+*.sublime-workspace
+
+###CodeIgniter###
+
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
