@@ -76,12 +76,12 @@ class Optional_login extends MY_Controller {
 		}
 
 		$data = array(
-			'title' => WEBSITE_NAME . ' - Optional Login Example',
-			'javascripts' => array(
-				'js/jquery.passwordToggle-1.1.js',
-				'js/jquery.char-limiter-3.0.0.js',
-				'js/default-char-limiters.js'
-			),
+			// 'title' => WEBSITE_NAME . ' - Optional Login Example',
+			// 'javascripts' => array(
+			// 	'js/jquery.passwordToggle-1.1.js',
+			// 	'js/jquery.char-limiter-3.0.0.js',
+			// 	'js/default-char-limiters.js'
+			// ),
 			'extra_head' => '
 				<script>
 					$(document).ready(function(){

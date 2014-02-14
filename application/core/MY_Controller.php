@@ -397,7 +397,9 @@ class MY_Controller extends CI_Controller
 			'javascripts' => array(
 				'js/jquery.passwordToggle-1.1.js',
 				'js/jquery.char-limiter-3.0.0.js',
-				'js/default-char-limiters.js'
+				'js/default-char-limiters.js',
+				'js/bootstrap.js',
+				'js/signin.js'
 			),
 			'extra_head' => '
 				<script>

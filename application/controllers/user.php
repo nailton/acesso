@@ -227,7 +227,7 @@ class User extends MY_Controller {
 
 		$data = array(
 			'javascripts' => array(
-				'js/jquery.passwordToggle-1.1.js'
+				'js/jquery.passwordToggle-1.1.js',
 			),
 			'extra_head' => '
 				<script>
