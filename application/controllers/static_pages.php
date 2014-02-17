@@ -50,14 +50,21 @@ class Static_pages extends MY_Controller {
 	public function index()
 	{
 		$data = array(
-			// 'content' => $this->load->view( 'static_pages/home', '', TRUE ),
-			'content' => $this->load->view( 'auth/login_form', '', TRUE ),
+			'content' => $this->load->view( 'static_pages/home', '', TRUE ),
+			// 'content' => $this->load->view( 'auth/login_form', '', TRUE ),
+			'javascripts' => array(
+				'js/bootstrap.js',
+				'js/signin.js',
+				),
 			'dynamic_extras' => '
-				$("a[rel*=external]").click( function(){
-					window.open(this.href);
-					return false;
-				});
-			'
+			$("a[rel*=external]").click( function(){
+				window.open(this.href);
+				return false;
+			});',
+		'style_sheets' => array(
+			'css/pages/signin.css' => 'screen',
+			),
+
 		);
 
 		/**
@@ -87,7 +94,7 @@ class Static_pages extends MY_Controller {
 			'title' => WEBSITE_NAME . ' - Screen Shots',
 			'description' => 'Not sure Community Auth is right for you? See some screenshots of the areas in Community Auth that require login.',
 			'content' => $this->load->view( 'static_pages/screenshots', '', TRUE )
-		);
+			);
 
 		$this->load->view( $this->template, $data );
 	}
@@ -104,11 +111,11 @@ class Static_pages extends MY_Controller {
 			'keywords' => 'codeigniter,authentication,open source',
 			'content' => $this->load->view( 'static_pages/privacy', '', TRUE ),
 			'dynamic_extras' => '
-				$("a[rel*=external]").click( function(){
-					window.open(this.href);
-					return false;
-				});
-			'
+			$("a[rel*=external]").click( function(){
+				window.open(this.href);
+				return false;
+			});
+		'
 		);
 
 		$this->load->view( $this->template, $data );
@@ -126,7 +133,7 @@ class Static_pages extends MY_Controller {
 		$data = array(
 			'title' => 'Community Auth - Licensed Under BSD',
 			'content' => $this->load->view( 'static_pages/license', $view_data, TRUE )
-		);
+			);
 
 		$this->load->view( $this->template, $data );
 	}
@@ -144,7 +151,7 @@ class Static_pages extends MY_Controller {
 			'title' => $this->lang->line('title'),
 			'keywords' => $this->lang->line('keywords'),
 			'content' => $this->load->view( 'static_pages/language_test', '', TRUE )
-		);
+			);
 
 		$this->load->view( $this->template, $data );
 	}

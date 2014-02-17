@@ -36,7 +36,7 @@ class User extends MY_Controller {
 			$data = array(
 				'title' => WEBSITE_NAME . ' User Logout Confirmation',
 				'content' => $this->load->view( 'auth/logout_confirmation', '', TRUE )
-			);
+				);
 
 			$this->load->view( $this->template, $data );
 		}
@@ -46,10 +46,19 @@ class User extends MY_Controller {
 		{
 			$data = array(
 				'title' => WEBSITE_NAME . ' User Index',
-				'content' => $this->load->view( 'user/user_index', '', TRUE )
-			);
+				'content' => $this->load->view( 'user/user_index', '', TRUE ),
+				'javascripts' => array(
+					'js/excanvas.min.js',
+					'js/chart.min.js',
+					'js/base.js',
+					),
+				'style_sheets' => array(
+					'css/pages/dashboard.css' => 'screen',
+					),
+				);
 
 			$this->load->view( $this->template, $data );
+
 		}
 	}
 
@@ -96,7 +105,7 @@ class User extends MY_Controller {
 						$this->load->library('generate_password');
 						$recovery_code = $this->generate_password->set_options( 
 							array( 'exclude' => array( 'char' ) ) 
-						)->random_string(64)->show();
+							)->random_string(64)->show();
 
 						$hashed_recovery_code = $this->_hash_recovery_code( $user_data->user_salt, $recovery_code );
 
@@ -106,8 +115,8 @@ class User extends MY_Controller {
 							array(
 								'passwd_recovery_code' => $hashed_recovery_code,
 								'passwd_recovery_date' => time()
-							)
-						);
+								)
+							);
 
 						$this->load->library('email');
 						$this->config->load('email');
@@ -118,7 +127,7 @@ class User extends MY_Controller {
 							'from_name'      => 'no_reply_email_config',
 							'template_data'  => array( 'user_data' => $user_data, 'recovery_code' => $recovery_code ),
 							'to'             => $this->input->post('user_email')
-						) );
+							) );
 
 						$view_data['confirmation'] = 1;
 					}
@@ -137,7 +146,7 @@ class User extends MY_Controller {
 
 		$data = array(
 			'content' => $this->load->view( 'user/recover_form', ( isset( $view_data ) ) ? $view_data : '', TRUE )
-		);
+			);
 
 		$this->load->view( $this->template, $data );
 	}
@@ -219,7 +228,7 @@ class User extends MY_Controller {
 				$this->tokens->match && 
 				isset( $view_data['user_name'] ) && 
 				$view_data['user_name'] !== FALSE 
-			)
+				)
 			{
 				$this->user_model->recovery_password_change();
 			}
@@ -228,17 +237,17 @@ class User extends MY_Controller {
 		$data = array(
 			'javascripts' => array(
 				'js/jquery.passwordToggle-1.1.js',
-			),
+				),
 			'extra_head' => '
-				<script>
-					$(document).ready(function(){
-						$("#show-password").passwordToggle({target:"#user_pass"});
-						$("#show-password").passwordToggle({target:"#user_pass_confirm"});
-					});
-				</script>
-			',
-			'content' => $this->load->view( 'user/choose_password_form', $view_data, TRUE )
-		);
+			<script>
+				$(document).ready(function(){
+					$("#show-password").passwordToggle({target:"#user_pass"});
+					$("#show-password").passwordToggle({target:"#user_pass_confirm"});
+				});
+	</script>
+	',
+	'content' => $this->load->view( 'user/choose_password_form', $view_data, TRUE )
+	);
 
 		$this->load->view( $this->template, $data );
 	}
@@ -306,8 +315,8 @@ class User extends MY_Controller {
 					'js/default-char-limiters.js',
 					'js/ajaxupload.js',
 					'js/user/self-update.js'
-				)
-			);
+					)
+				);
 
 			$this->load->view( $this->template, $data );
 
@@ -336,14 +345,14 @@ class User extends MY_Controller {
 				if( 
 					$this->tokens->match && 
 					$this->_delete_profile_image()
-				)
+					)
 				{
 					// Send success message back
 					$response = array(
 						'status'        => 'success',
 						'token'         => $this->tokens->token(),
 						'ci_csrf_token' => $this->security->get_csrf_hash()
-					);
+						);
 				}
 
 				else
@@ -352,7 +361,7 @@ class User extends MY_Controller {
 					$response = array(
 						'status'  => 'error',
 						'message' => 'No Token Match - Please Reload Page'
-					);
+						);
 				}
 
 				echo json_encode( $response );
@@ -384,7 +393,7 @@ class User extends MY_Controller {
 			'profile_image', 
 			array(), 
 			array( 'profile_image' => '' ) 
-		))
+			))
 		{
 			/**
 			 * If the profile image is being stored in the filesystem,

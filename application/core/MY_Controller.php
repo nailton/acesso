@@ -395,12 +395,11 @@ class MY_Controller extends CI_Controller
 		$data = array(
 			'title' => WEBSITE_NAME . ' - Login',
 			'javascripts' => array(
-				'js/jquery.passwordToggle-1.1.js',
-				'js/jquery.char-limiter-3.0.0.js',
-				'js/default-char-limiters.js',
-				'js/bootstrap.js',
 				'js/signin.js'
 			),
+			'style_sheets' =>array(
+				'css/pages/signin.css' => 'screen'
+				),
 			'extra_head' => '
 				<script>
 					$(document).ready(function(){

@@ -43,9 +43,11 @@
 	
 	echo link_tag( array( 'href' => 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
 	
-	echo link_tag( array( 'href' => 'css/style-basico-admin.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
+	echo link_tag( array( 'href' => 'css/style.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
 	
-	echo link_tag( array( 'href' => 'css/pages/signin.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
+	// echo link_tag( array( 'href' => 'css/pages/signin.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
+
+	// echo link_tag( array( 'href' => 'css/pages/dashboard.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
 
 	// Add any additional stylesheets
 	if( isset( $style_sheets ) )
@@ -58,66 +60,111 @@
 
 	
 	?>
-</head>
-<body id="<?php echo $this->router->fetch_class() . '-' . $this->router->fetch_method(); ?>" class="<?php echo $this->router->fetch_class(); ?>-controller <?php echo $this->router->fetch_method(); ?>-method">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    </head>
+    <body id="<?php echo $this->router->fetch_class() . '-' . $this->router->fetch_method(); ?>" class="<?php echo $this->router->fetch_class(); ?>-controller <?php echo $this->router->fetch_method(); ?>-method">
 
 
 
-	<?php
+     <?php
        // Check if the user is logged in and on HTTPS
-	if( isset( $auth_first_name ) )
-	{
-		$_user_first_name = $auth_first_name;
-	}
+     if( isset( $auth_first_name ) )
+     {
+      $_user_first_name = $auth_first_name;
+    }
 
        // Show the login / logout ...
        // echo ( isset( $_user_first_name ) ) ? 'Welcome, ' . $_user_first_name . ' &bull; ' . secure_anchor('user','User Index') . ' &bull; ' . secure_anchor('user/logout','Logout') : secure_anchor('register','Register') . ' &bull; ' . secure_anchor('user','Login');
-	?>
 
-	<div class="navbar navbar-fixed-top">
+    ?>
+    <?php if(isset( $_user_first_name )){ ?>
+    <!-- TOPO 1-->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container"> 
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </a>
+            <a class="brand" href="#">Controle de Acessos </a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-cog"></i> Conta <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="javascript:;">Configurações</a></li>
+                      <li><a href="javascript:;">Ajuda</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="icon-user"></i>  <?php echo $_user_first_name ?><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="javascript:;">Perfil</a></li>
+                        <li><?php echo secure_anchor('user/logout','Logout') ?></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="navbar-search pull-right">
+                    <input type="text" class="search-query" placeholder="Search">
+                  </form>
+                </div>
+                <!--/.nav-collapse --> 
+              </div>
+              <!-- /container --> 
+            </div>
+            <!-- /navbar-inner --> 
+          </div>
+          <?php }else{ ?>
 
-		<div class="navbar-inner">
 
-			<div class="container">
+          <div class="navbar navbar-fixed-top">
 
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
+            <div class="navbar-inner">
+
+              <div class="container">
+
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
 
 
-				<div class="nav-collapse">
-					<ul class="nav pull-right">
+                <div class="nav-collapse">
+                  <ul class="nav pull-right">
 
-						<li class="">           
+                    <li class="">           
            <?php        // Show the login / logout ...
            echo ( isset( $_user_first_name ) ) ? '<a>Usuário: ' . $_user_first_name . '</a></li><li>' . secure_anchor('user/logout','Logout') : secure_anchor('register','Registro') . '</li><li class=""> ' . secure_anchor('user','Login'); ?>
          </li>
          <?php  if(!isset( $_user_first_name )): ?>
-         	<li><a href="<?php echo secure_site_url('user/recover'); ?>">Recuperar senha</a></li>
-         <?php endif; ?>
-       </ul>
+          <li><a href="<?php echo secure_site_url('user/recover'); ?>">Recuperar senha</a></li>
+        <?php endif; ?>
+      </ul>
 
-     </div><!--/.nav-collapse -->  
+    </div><!--/.nav-collapse -->  
 
-   </div> <!-- /container -->
+  </div> <!-- /container -->
 
- </div> <!-- /navbar-inner -->
+</div> <!-- /navbar-inner -->
 
 </div> <!-- /navbar -->
 
 
 
 
+<?php } ?>
+
+
+<!-- TOPO -->
 
 
 <?php echo ( isset( $content ) ) ? $content : ''; ?>
-
-
-
-
-
 
 
 
@@ -125,6 +172,7 @@
 
 // jQuery is always loaded
 echo script_tag( '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' ) . "\n";
+echo script_tag( 'js/bootstrap.js' ) . "\n";
 
 	// Add any additional javascript
 if( isset( $javascripts ) )
