@@ -50,7 +50,8 @@ class Static_pages extends MY_Controller {
 	public function index()
 	{
 		$data = array(
-			'content' => $this->load->view( 'static_pages/home', '', TRUE ),
+			// 'content' => $this->load->view( 'static_pages/home', '', TRUE ),
+			'content' => $this->load->view( 'auth/login_form', '', TRUE ),
 			'dynamic_extras' => '
 				$("a[rel*=external]").click( function(){
 					window.open(this.href);
