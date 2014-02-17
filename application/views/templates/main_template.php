@@ -104,7 +104,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="icon-user"></i>  <?php echo $_user_first_name ?><b class="caret"></b></a>
                       <ul class="dropdown-menu">
-                        <li><a href="javascript:;">Perfil</a></li>
+                        <li><?php echo secure_anchor('user/self_update','Perfil') ?></li>
                         <li><?php echo secure_anchor('user/logout','Logout') ?></li>
                       </ul>
                     </li>
