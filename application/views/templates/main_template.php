@@ -119,6 +119,32 @@
             </div>
             <!-- /navbar-inner --> 
           </div>
+          <div class="subnavbar">
+            <div class="subnavbar-inner">
+              <div class="container">
+                <ul class="mainnav">
+                  <li class="active"><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                  <li><a href="reports.html"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+                  <li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
+                  <li><a href="charts.html"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
+                  <li><a href="shortcodes.html"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
+                  <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="icons.html">Icons</a></li>
+                      <li><a href="faq.html">FAQ</a></li>
+                      <li><a href="pricing.html">Pricing Plans</a></li>
+                      <li><a href="login.html">Login</a></li>
+                      <li><a href="signup.html">Signup</a></li>
+                      <li><a href="error.html">404</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- /container --> 
+            </div>
+            <!-- /subnavbar-inner --> 
+          </div>
+          <!-- /subnavbar -->
           <?php }else{ ?>
 
 
@@ -168,52 +194,129 @@
 
 
 
-<?php
 
+
+
+
+
+
+<?php if(isset( $_user_first_name )){ ?>
+<!-- <div class="extra">
+  <div class="extra-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <h4>
+            About Free Admin Template</h4>
+            <ul>
+              <li><a href="javascript:;">EGrappler.com</a></li>
+              <li><a href="javascript:;">Web Development Resources</a></li>
+              <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
+              <li><a href="javascript:;">Free Resources and Scripts</a></li>
+            </ul>
+          </div>
+          /span3
+          <div class="span3">
+            <h4>
+              Support</h4>
+              <ul>
+                <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                <li><a href="javascript:;">Ask a Question</a></li>
+                <li><a href="javascript:;">Video Tutorial</a></li>
+                <li><a href="javascript:;">Feedback</a></li>
+              </ul>
+            </div>
+            /span3
+            <div class="span3">
+              <h4>
+                Something Legal</h4>
+                <ul>
+                  <li><a href="javascript:;">Read License</a></li>
+                  <li><a href="javascript:;">Terms of Use</a></li>
+                  <li><a href="javascript:;">Privacy Policy</a></li>
+                </ul>
+              </div>
+              /span3
+              <div class="span3">
+                <h4>
+                  Open Source jQuery Plugins</h4>
+                  <ul>
+                    <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
+                    <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
+                    <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
+                    <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                  </ul>
+                </div>
+                /span3
+              </div>
+              /row 
+            </div>
+            /container 
+          </div>
+          /extra-inner 
+        </div>
+        /extra -->
+  <!--       <div class="footer">
+    <div class="footer-inner">
+      <div class="container">
+        <div class="row">
+          <div class="span12"> &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+          /span12 
+        </div>
+        /row 
+      </div>
+      /container 
+    </div>
+    /footer-inner 
+  </div> -->
+        <!-- /footer --> 
+        <?php } ?>
+
+        <?php
 // jQuery is always loaded
-echo script_tag( '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' ) . "\n";
-echo script_tag( 'js/bootstrap.js' ) . "\n";
+        echo script_tag( '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' ) . "\n";
+        echo script_tag( 'js/bootstrap.js' ) . "\n";
 
 	// Add any additional javascript
-if( isset( $javascripts ) )
-{ 
-	for( $x=0; $x<=count( $javascripts )-1; $x++ )
-	{
-		echo script_tag( $javascripts["$x"] ) . "\n";
-	}
-}
+        if( isset( $javascripts ) )
+        { 
+         for( $x=0; $x<=count( $javascripts )-1; $x++ )
+         {
+          echo script_tag( $javascripts["$x"] ) . "\n";
+        }
+      }
 
 	// Add anything else to the head
-echo ( isset( $extra_head ) ) ? $extra_head : '';
+      echo ( isset( $extra_head ) ) ? $extra_head : '';
 
 	// Add Google Analytics code if available in config
-if( ! empty( $tracking_code ) ) echo $tracking_code; 
+      if( ! empty( $tracking_code ) ) echo $tracking_code; 
 
 	// Insert any HTML before the closing body tag if desired
-if( isset( $final_html ) )
-{
-	echo $final_html;
-}
+      if( isset( $final_html ) )
+      {
+       echo $final_html;
+     }
 
 	// Add the cookie checker
-if( isset( $cookie_checker ) )
-{
-	echo $cookie_checker;
-}
+     if( isset( $cookie_checker ) )
+     {
+       echo $cookie_checker;
+     }
 
 	// Add any javascript before the closing body tag
-if( isset( $dynamic_extras ) )
-{
-	echo '<script>
-	';
-	echo $dynamic_extras;
-	echo '</script>
-	';
-}
-?>
-</body>
-</html>
-<?php
+     if( isset( $dynamic_extras ) )
+     {
+       echo '<script>
+       ';
+       echo $dynamic_extras;
+       echo '</script>
+       ';
+     }
+     ?>
+   </body>
+   </html>
+   <?php
 
-/* End of file main_template.php */
+   /* End of file main_template.php */
 /* Location: /application/views/templates/main_template.php */
