@@ -12,99 +12,214 @@
  */
 ?>
 
-<h1>More Than Just An Authentication Library</h1>
-
 <?php
 
-	if( isset( $auth_level ) )
-	{
-		echo '
-			<p>
-				You are seeing this version of the home page because you are logged in. If you look in the view for this home page, you will see how the variable "$auth_level" is being used to test for this condition. $auth_level is only set if a logged in user is making the request.
-			</p>
-		';
-	}
-	else
-	{
-		?>
+if( isset( $auth_level ) ){ ?>
+<div class="main">
+	<div class="main-inner">
+		<div class="container">
+			<div class="row">
+				<div class="span6">
 
-			<p>
-				Community Auth is a user authentication application for <a href="http://codeigniter.com" rel="external">CodeIgniter</a>. It is completely unique, and not based on anyone's previous work. If you've come here looking for a CodeIgniter authentication library, then please keep in mind that Community Auth is more than just a library. Community Auth is distributed with example controllers, models, views, and should be considered a project foundation. All of this is available 3 ways:
-			</p>
-			<ol class="std-list">
-				<li><b>Tip</b> - The most current code in development. Installed in CodeIgniter <?php echo CI_VERSION; ?> for your convenience. May contain code not fully tested.</li>
-				<li><b><?php echo TAG; ?></b> - The last tagged version in the repository. Installed in CodeIgniter <?php echo CI_VERSION; ?> for your convenience. Fully tested.</li>
-				<li><b><?php echo TAG; ?> Files Only</b> - Isolated code not installed in CodeIgniter. Downloaded files are manually merged with your existing CodeIgniter application. Only suitable for experienced developers.</li>
-			</ol>
-			<h2>Core Authentication Features</h2>
-			<ul class="std-list">
-				<li>User Authentication <i>(User Login)</i></li>
-				<li>Access Granted by Level / Role</li>
-				<li>Access Granted by Role Group</li>
-				<li>Content Switching in Views</li>
-				<li>Limits Failed Login Attempts</li>
-				<li>Limits Login to a Single Device <i>(Default)</i></li>
-				<li>Deny Access by IP <i>(Requires Local Apache Configuration File)</i></li>
-				<li>Persistent Login <i>(Remember Me) (Turned Off by Default)</i></li>
-				<li>Forgotten Password and Username Recovery</li>
-				<li>New User Registration
-					<ul class="std-list">
-						<li>Off by Default</li>
-						<li>Instant Registration Mode</li>
-						<li>Registration by Email Verification Mode</li>
-						<li>Registration by Admin Approval Mode</li>
-					</ul>
-				</li>
-				<li>User Account Update
-					<ul class="std-list">
-						<li>Self Update</li>
-						<li>Update by Superior Role</li>
-					</ul>
-				</li>
-			</ul>
-			<h3>Built-in Debugging &amp; Time Saving Examples</h3>
-			<p>
-				Community Auth also makes for a great learning tool for developers who are new to CodeIgniter. <a href="http://www.firephp.org" rel="external">FirePHP</a> is included and autoloaded in the distribution, and by installing <a href="http://getfirebug.com" rel="external">Firebug</a>, and either the FirePHP or <a href="http://developercompanion.com/" rel="external">DeveloperCompanion</a> extensions for Firefox, you've got an impressive debugging tool at your disposal. For those of you who prefer Chrome, <a href="http://www.chromephp.com/" rel="external">ChromePHP</a> is also loaded in both development and testing environments. Community Auth also shows examples of extending the CodeIgniter controller class, extending other CodeIgniter libraries, overriding CodeIgniter helpers, pagination, and ajax using <a href="http://jquery.com" rel="external">jQuery</a>. An <a href="https://github.com/valums/ajax-upload">ajax uploader</a> shows you how to upload images and store them on the filesystem or in the database. A "custom uploader" shows you how to use jQuery UI's draggable, droppable, and sortable, and all at the same time. There's more too.
-			</p>
-			<p>
-				If you've downloaded Community Auth and are checking it out, thank you for giving it a try. I'm pleased to share this application with you, and hopefully we can work together to make it especially useful for your CodeIgniter projects. It's been something I've worked on over the last couple of years, and you are getting the benefit of hundreds of hours of programming time and experience.
-			</p>
-			<h3>Repositories</h3>
-			<p>
-				Community Auth currently has repositories at <a href="https://bitbucket.org/skunkbad/community-auth" rel="external">Bitbucket</a> and <a href="https://github.com/skunkbad/Community-Auth">GitHub</a>.
-			</p>
-			<h3>Quick Start</h3>
-			<p>If you're an experienced user of CodeIgniter, you can get started quite easily.</p>
-			<ul class="std-list">
-				<li>
-					Make sure to look through all of the config files, and set all configuration options according to the description in the comments. Community Auth uses some config files that are not part of CodeIgniter's standard set, but also has custom additions to the constants.php config file.
-				</li>
-				<li>Create a database.</li>
-				<li>
-					Edit then run the <?php echo secure_anchor('init', 'init controller'); ?>. This populates the database and creates the admin. You may optionally create a set of test users while running this installer. Please make sure to disable or remove this controller and the db.sql file once completed.
-				</li>
-			</ul>
-			<p>For more detailed instructions on how to install, configure, and use Community Auth, please check out the <?php echo anchor('documentation','documentation'); ?> for Community Auth, which takes you step by step through the process of getting up and running.</p>
-			<h3>Support</h3>
-			<p>
-				If you need help, feel free to start a new thread in the <a href="http://codeigniter.com/forums/" rel="external">CodeIgniter Forum</a>. I'm "skunkbad" in the forum, and I'll help whenever possible. Due to my busy work schedule, I may not always be able to help. Work does come first, and that said, if you are willing to pay for support, please feel free to contact me on my website, <a href="http://brianswebdesign.com" rel="external">http://brianswebdesign.com</a>.
-			</p>
-			<h3>License</h3>
-			<p>
-				Community Auth is licensed under the <a href="http://www.opensource.org/licenses/BSD-3-Clause" rel="external">BSD License</a>.
-			</p>
-			<p>
-				Read the license <?php echo anchor('license', 'HERE'); ?>.
-			</p>
 
-		<?php
-	}
 
-?>
+					<div class="widget">
+						<div class="widget-header"> <i class="icon-bookmark"></i>
+							<h3>Ferramentas</h3>
+						</div>
+						<!-- /widget-header -->
+						<div class="widget-content">
+							<div class="shortcuts"> 
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-globe"></i>
+									<span class="shortcut-label">Registro BR</span> 
+								</a> 
 
-<p style="padding-top:18px;font-size:85%;color:#777;">
-	Page rendered in {elapsed_time} seconds
-</p>
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-link"></i>
+									<span class="shortcut-label">Hospedagem</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-upload-alt"></i>
+									<span class="shortcut-label">FTP</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-cogs"></i>
+									<span class="shortcut-label">SSH</span> 
+								</a> 
+
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-cloud"></i>
+									<span class="shortcut-label">Bancos dados</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-cog"></i>
+									<span class="shortcut-label">Administrações</span> 
+								</a> 
+
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-group"></i>
+									<span class="shortcut-label">Clientes</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-envelope"></i> 
+									<span class="shortcut-label">E-mail</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-user"></i>
+									<span class="shortcut-label">Usuários</span> 
+								</a>
+
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-truck"></i>
+									<span class="shortcut-label">Terceirizado</span> 
+								</a> 
+
+								<a href="javascript:;" class="shortcut"> 
+									<i class="shortcut-icon icon-bar-chart"></i>
+									<span class="shortcut-label">Admin estatística</span> 
+								</a> 
+
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-phone"></i>
+									<span class="shortcut-label">Telefônico</span> 
+								</a>
+								
+							</div>
+							<!-- /shortcuts --> 
+						</div>
+						<!-- /widget-content --> 
+					</div>
+					<!-- /widget -->
+
+					<div class="widget widget-table action-table">
+						<div class="widget-header"> <i class="icon-th-list"></i>
+						<h3>Link úteis</h3>
+						</div>
+						<!-- /widget-header -->
+						<div class="widget-content">
+							<table class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th> Descrição </th>
+										<th> Link</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td> Locaweb login </td>
+										<td> <a href="http://www.locaweb.com.br/" target="_blank">
+										<i class="btn-icon-only icon-external-link"> </i>http://www.locaweb.com.br/</a> </td>
+									</tr>
+									<tr>
+										<td> Status Locaweb </td>
+										<td> <a href="http://statusblog.locaweb.com.br/" target="_blank">
+										<i class="btn-icon-only icon-external-link"> </i>http://statusblog.locaweb.com.br/</a> </td>
+									</tr>
+									<tr>
+										<td> Google Apps Status </td>
+										<td> <a href="http://www.google.com/appsstatus" target="_blank">
+										<i class="btn-icon-only icon-external-link"> </i>http://www.google.com/appsstatus</a> </td>
+									</tr>
+									<tr>
+										<td> Registro BR </td>
+										<td> <a href="https://registro.br/" target="_blank">
+										<i class="btn-icon-only icon-external-link"> </i>https://registro.br/</a> </td>
+									</tr>
+									<tr>
+										<td> phpMyadmin Locaweb</td>
+										<td> <a href="https://phpmyadmin.locaweb.com.br/" target="_blank">
+										<i class="btn-icon-only icon-external-link"> </i>https://phpmyadmin.locaweb.com.br/</a> </td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<!-- /widget-content --> 
+					</div>
+					<!-- /widget --> 
+
+				</div>
+				<!-- /span6 -->
+				<div class="span6">
+
+
+					<div class="widget widget-nopad">
+						<div class="widget-header"> <i class="icon-list-alt"></i>
+							<h3> Estatísticas de hoje</h3>
+						</div>
+						<!-- /widget-header -->
+						<div class="widget-content">
+							<div class="widget big-stats-container">
+								<div class="widget-content">
+									<h6 class="bigstats">O volume de itens gerenciados.</h6>
+									<div id="big_stats" class="cf">
+										<!-- <div class="stat"> <i class="icon-globe"></i> <span class="value">2</span> </div> -->
+										<!-- .stat -->
+
+										<div class="stat"> <i class="icon-link"></i> <span class="value">35</span> </div>
+										<!-- .stat -->
+
+										<div class="stat"> <i class="icon-upload-alt"></i> <span class="value">43</span> </div>
+										<!-- .stat -->
+
+										<div class="stat"> <i class=" icon-cogs"></i> <span class="value">26</span> </div>
+										<!-- .stat --> 
+
+										<div class="stat"> <i class="icon-cloud"></i> <span class="value">56</span> </div>
+										<!-- .stat --> 
+									</div>
+
+									<div id="big_stats" class="cf">
+
+										<div class="stat"> <i class=" icon-cog"></i> <span class="value">19</span> </div>
+										<!-- .stat --> 
+
+										<div class="stat"> <i class="icon-group"></i> <span class="value">18</span> </div>
+										<!-- .stat --> 
+
+										<div class="stat"> <i class="icon-truck"></i> <span class="value">7</span> </div>
+										<!-- .stat --> 
+										<div class="stat"> <i class="icon-bar-chart"></i> <span class="value">27</span> </div>
+										<!-- .stat --> 
+									</div>
+
+									<!-- <div id="big_stats" class="cf"> -->
+									<!-- <div class="stat"> <i class="icon-phone"></i> <span class="value">25%</span> </div> -->
+									<!-- .stat --> 
+									<!-- </div> -->
+								</div>
+								<!-- /widget-content --> 
+
+							</div>
+						</div>
+					</div>
+					<!-- /widget -->
+
+				</div>
+				<!-- /span6 --> 
+			</div>
+			<!-- /row --> 
+		</div>
+		<!-- /container --> 
+	</div>
+	<!-- /main-inner --> 
+</div>
+<!-- /main -->
+
+
+
+<?php 	} else { 
+
+	header('Location: index.php/user');
+
+} ?>
+
 
 <?php
 

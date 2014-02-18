@@ -53,8 +53,8 @@ class Static_pages extends MY_Controller {
 			'content' => $this->load->view( 'static_pages/home', '', TRUE ),
 			// 'content' => $this->load->view( 'auth/login_form', '', TRUE ),
 			'javascripts' => array(
-				'js/bootstrap.js',
-				'js/signin.js',
+				'js/excanvas.min.js',
+				'js/base.js',
 				),
 			'dynamic_extras' => '
 			$("a[rel*=external]").click( function(){
@@ -62,7 +62,7 @@ class Static_pages extends MY_Controller {
 				return false;
 			});',
 		'style_sheets' => array(
-			'css/pages/signin.css' => 'screen',
+			'css/pages/dashboard.css' => 'screen',
 			),
 
 		);
