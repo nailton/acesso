@@ -70,7 +70,8 @@ if( isset( $auth_level ) ){ ?>
 									<span class="shortcut-label">E-mail</span> 
 								</a>
 
-								<a href="javascript:;" class="shortcut">
+<?php echo secure_anchor('user/acoes_usuario', 'Category Menu', array( 'id' => 'active' ) );  ?>
+								<!-- <a href="index.php/user/acoes_usuario/" class="shortcut"> -->
 									<i class="shortcut-icon icon-user"></i>
 									<span class="shortcut-label">Usuários</span> 
 								</a>

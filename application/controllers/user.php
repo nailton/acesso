@@ -470,6 +470,29 @@ class User extends MY_Controller {
 
 	// --------------------------------------------------------------
 
+	/**
+	 * Self update
+	 */
+	public function acoes_usuario()
+	{
+		// Require a logged in user of any level
+		if( $this->require_min_level(1) )
+		{
+
+		$data = array(
+			'title' => 'Ações para usuários',
+			'content' => $this->load->view( 'user/acoes_usuario', '', TRUE )
+		);
+
+		$this->load->view( $this->template, $data );
+
+		}
+
+	}
+
+	// --------------------------------------------------------------
+
+
 }
 
 /* End of file users.php */
