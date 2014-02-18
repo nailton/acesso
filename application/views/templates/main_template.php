@@ -89,7 +89,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span> </a>
-            <a class="brand" href="#">Controle de Acessos </a>
+            <!-- <a class="brand" href="#">Controle de Acessos </a> -->
+            <?php 
+            echo anchor('/', 'Controle de Acessos', array( 'id' => 'active', 'class'=>'brand' ));
+            ?>
             <div class="nav-collapse">
               <ul class="nav pull-right">
                 <li class="dropdown">
@@ -123,7 +126,7 @@
             <div class="subnavbar-inner">
               <div class="container">
                 <ul class="mainnav">
-                  <li class="active"><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                  <li class="active"><a href="index.php"><i class="icon-dashboard"></i><span>Geral</span> </a> </li>
                   <li><a href="reports.html"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
                   <li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
                   <li><a href="charts.html"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>

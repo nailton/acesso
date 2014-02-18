@@ -315,10 +315,6 @@ class User extends MY_Controller {
 					'js/default-char-limiters.js',
 					'js/ajaxupload.js',
 					'js/user/self-update.js',
-					'js/signin.js'
-					),
-				'style_sheets'=>array(
-					'css/pages/signin.css'=>'screen'
 					)
 				);
 
