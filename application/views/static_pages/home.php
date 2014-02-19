@@ -15,15 +15,10 @@
 <?php
 
 if( isset( $auth_level ) ){ ?>
-<div class="main">
-	<div class="main-inner">
-		<div class="container">
 			<div class="row">
 				<div class="span6">
 
-
-
-					<div class="widget">
+				<div class="widget">
 						<div class="widget-header"> <i class="icon-bookmark"></i>
 							<h3>Ferramentas</h3>
 						</div>
@@ -206,14 +201,6 @@ if( isset( $auth_level ) ){ ?>
 				<!-- /span6 --> 
 			</div>
 			<!-- /row --> 
-		</div>
-		<!-- /container --> 
-	</div>
-	<!-- /main-inner --> 
-</div>
-<!-- /main -->
-
-
 
 <?php 	} else { 
 

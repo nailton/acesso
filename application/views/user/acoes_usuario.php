@@ -1,21 +1,13 @@
 <?php if( ! defined('BASEPATH') ) exit('No direct script access allowed');
 /**
- * Community Auth - User Index View
- *
- * Community Auth is an open source authentication application for CodeIgniter 2.1.3
- *
- * @package     Community Auth
- * @author      Robert B Gottier
- * @copyright   Copyright (c) 2011 - 2014, Robert B Gottier. (http://brianswebdesign.com/)
+ * Total Interativa - Ações usuário
+ * @package     Total Interativa
+ * @author      Nailton Sousa
+ * @copyright   Copyright (c) 2014, Nailton Sousa. (nailtoninfo@gmail.com)
  * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
- * @link        http://community-auth.com
+ * @link        http://totalinterativa.com.br
  */
 ?>
-<div class="main">
-
-  <div class="main-inner">
-
-    <div class="container">
 
       <div class="row">
 
@@ -44,12 +36,6 @@
         </div> <!-- /spa12 -->
 
       </div> <!-- /row -->
-
-    </div> <!-- /container -->
-    
-  </div> <!-- /main-inner -->
-
-</div> <!-- /main -->
 
 <?php
 /* End of file user_index.php */

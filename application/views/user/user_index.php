@@ -11,15 +11,9 @@
  * @link        http://community-auth.com
  */
 ?>
-
-<div class="main">
-  <div class="main-inner">
-    <div class="container">
       <div class="row">
         <div class="span6">
-
-
-        
+       
           <div class="widget">
             <div class="widget-header"> <i class="icon-bookmark"></i>
               <h3>Important Shortcuts</h3>
@@ -76,13 +70,6 @@
           <!-- /span6 --> 
         </div>
         <!-- /row --> 
-      </div>
-      <!-- /container --> 
-    </div>
-    <!-- /main-inner --> 
-  </div>
-  <!-- /main -->
-
   <?php
   /* End of file user_index.php */
 /* Location: /application/views/user/user_index.php */
