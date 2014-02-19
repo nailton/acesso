@@ -481,7 +481,11 @@ class User extends MY_Controller {
 
 		$data = array(
 			'title' => 'Ações para usuários',
-			'content' => $this->load->view( 'user/acoes_usuario', '', TRUE )
+			'content' => $this->load->view( 'user/acoes_usuario', '', TRUE ),
+			// Load the show password script
+				'style_sheets' => array(
+					'css/pages/faq.css'=>'screen',
+					)
 		);
 
 		$this->load->view( $this->template, $data );

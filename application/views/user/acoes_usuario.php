@@ -12,103 +12,45 @@
  */
 ?>
 <div class="main">
-  
+
   <div class="main-inner">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="row">
-          
-          <div class="span12">
-            
-            <div class="widget">
-            
-          <div class="widget-header">
-            <i class="icon-pushpin"></i>
-            <h3>Sample Frequently Asked Questions</h3>
-          </div> <!-- /widget-header -->
-          
-          <div class="widget-content">
-            
-            <h3>Search</h3>
-            
-            <br />
-            
-            <ol class="faq-list">
-              
-              <li>
-                  <h4>When I visit the free sample calendar it still says “Check back soon for today's free sample”- Why is that?</h4>
-                  
-              </li>
-              
-              <li>
-                  <h4>When I went to request the sample it said they were out or that I didn’t qualify to get the sample.</h4>
-                  
-              </li>
-              
-              <li>
-                
-                  <h4>The free sample site won't work for me.
+      <div class="row">
 
-</h4>
-                   
-              </li>
-              
-              <li>
-                  <h4>I don't have a Facebook account and cannot accept Facebook offers. Why do I have to “Like” a company on Facebook to get the sample?
+        <div class="span12">
 
-</h4>
-                  
-              </li>
-              
-              <li>
-                
-                  <h4>I don't want give my phone number to request a sample.
+          <div class="widget">
 
-</h4>
-                  
-              </li>
-              
-              <li>
-                  <h4>I don't want to have my email inbox overrun with newsletters, offers and possibly spam.
+            <div class="widget-header">
+              <i class="icon-wrench"></i>
+              <h3>Lista de ações para usuários</h3>
+            </div> <!-- /widget-header -->
 
-</h4>
-                  
-              </li>
-              
-              <li>
-                
-                  <h4>I can’t see the free sample calendar.
-
-</h4>
-                  
-              </li>
-              
-          
-              
-              
-              
-            </ol>
+            <div class="widget-content">
+              <ol class="faq-list">
+                <li><a href=""><i class="icon-edit"></i> Meu perfil</a></li>
+                <li><a href=""><i class="icon-plus"></i> Criar usuário</a></li>
+                <li><a href=""><i class="icon-cog"></i> Gerenciar usuário</a></li>
+                <li><a href=""><i class="icon-signin"></i> Modo de registro</a></li>
+                <li><a href=""><i class="icon-lock"></i> Negar acesso</a></li>    
+                <li><a href=""><i class="icon-edit"></i> Inscrição pendente</a></li>    
+              </ol>
+            </div> <!-- /widget-content -->
             
-            
-          </div> <!-- /widget-content -->
-            
-        </div> <!-- /widget --> 
-        
+          </div> <!-- /widget --> 
+
         </div> <!-- /spa12 -->
-            
-        
-          
-          
-          
-        </div> <!-- /row -->
-  
-      </div> <!-- /container -->
+
+      </div> <!-- /row -->
+
+    </div> <!-- /container -->
     
   </div> <!-- /main-inner -->
-      
+
 </div> <!-- /main -->
 
-  <?php
-  /* End of file user_index.php */
+<?php
+/* End of file user_index.php */
 /* Location: /application/views/user/user_index.php */

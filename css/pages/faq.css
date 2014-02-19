@@ -53,14 +53,14 @@ Bootstrap Admin Template by EGrappler.com
 
 .faq-list {
 	padding: 0;
-	margin: 3em 0 0;
+	margin: 2em 0 0 1em;
 	
 	list-style: none;	
 }
 
 .faq-list li {
 	display: table;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 
 .faq-icon {
