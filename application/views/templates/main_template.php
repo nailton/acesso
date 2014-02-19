@@ -127,8 +127,8 @@
               <div class="container">
                 <ul class="mainnav">
                   <li class="active"><a href="index.php"><i class="icon-dashboard"></i><span>Geral</span> </a> </li>
-                  <li><a href="index.php"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-                  <li><a href="index.php"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
+                  <li><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><i class="icon-arrow-left"></i><span>Voltar</span> </a> </li>
+                 <!--  <li><a href="index.php"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
                   <li><a href="index.php"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
                   <li><a href="index.php"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
                   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
@@ -140,7 +140,7 @@
                       <li><a href="index.php">Signup</a></li>
                       <li><a href="index.php">404</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <!-- /container --> 
