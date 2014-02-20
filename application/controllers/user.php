@@ -46,7 +46,7 @@ class User extends MY_Controller {
 		{
 			$data = array(
 				'title' => WEBSITE_NAME . ' User Index',
-				'content' => $this->load->view( 'user/user_index', '', TRUE ),
+				'content' => $this->load->view( 'static_pages/home', '', TRUE ),
 				'javascripts' => array(
 					'js/excanvas.min.js',
 					'js/chart.min.js',
@@ -472,7 +472,7 @@ class User extends MY_Controller {
 	// --------------------------------------------------------------
 
 	/**
-	 * Self update
+	 * acoes_usuario - criar, editar
 	 */
 	public function acoes_usuario()
 	{

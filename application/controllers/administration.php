@@ -82,6 +82,7 @@ class Administration extends MY_Controller {
 			}
 
 			$data = array(
+				'title'=>'Criar conta',
 				'content' => $this->load->view( 'administration/create_user', ( isset( $view_data ) ) ? $view_data : '', TRUE ),
 
 				// Load the show password script
