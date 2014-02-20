@@ -9,33 +9,16 @@
  */
 ?>
 
-      <div class="row">
-
-        <div class="span12">
-
-          <div class="widget">
-
-            <div class="widget-header">
-              <i class="icon-wrench"></i>
-              <h3>Lista de ações para usuários</h3>
-            </div> <!-- /widget-header -->
-
-            <div class="widget-content">
-              <ol class="faq-list">
-                <li><a href="index.php/user/self_update"><i class="icon-edit"></i> Meu perfil</a></li>
-                <li><a href="index.php/administration/create_user"><i class="icon-plus"></i> Criar usuário</a></li>
-                <li><a href="index.php/administration/manage_users"><i class="icon-cog"></i> Gerenciar usuário</a></li>
-                <li><a href="index.php/register/settings"><i class="icon-signin"></i> Modo de registro</a></li>
-                <li><a href="index.php/administration/deny_access"><i class="icon-lock"></i> Negar acesso</a></li>    
-                <li><a href="index.php/register/pending_registrations"><i class="icon-edit"></i> Inscrição pendente</a></li>    
-              </ol>
-            </div> <!-- /widget-content -->
-            
-          </div> <!-- /widget --> 
-
-        </div> <!-- /spa12 -->
-
-      </div> <!-- /row -->
+<div class="widget-content">
+  <ol class="faq-list">
+    <li><a href="index.php/user/self_update"><i class="icon-edit"></i> Meu perfil</a></li>
+    <li><a href="index.php/administration/create_user"><i class="icon-plus"></i> Criar usuário</a></li>
+    <li><a href="index.php/administration/manage_users"><i class="icon-cog"></i> Gerenciar usuário</a></li>
+    <li><a href="index.php/register/settings"><i class="icon-signin"></i> Modo de registro</a></li>
+    <li><a href="index.php/administration/deny_access"><i class="icon-lock"></i> Negar acesso</a></li>    
+    <li><a href="index.php/register/pending_registrations"><i class="icon-edit"></i> Inscrição pendente</a></li>    
+  </ol>
+</div> <!-- /widget-content -->
 
 <?php
 /* End of file user_index.php */

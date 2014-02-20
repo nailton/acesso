@@ -306,6 +306,7 @@ class User extends MY_Controller {
 			$view_data['role_specific_form'] = $this->load->view( 'user/self_update/self_update_' . $role, $view_data, TRUE );
 
 			$data = array(
+				'title' => 'Sua conta',
 				'content' => $this->load->view( 'user/self_update', $view_data, TRUE ),
 
 				// Load the show password script

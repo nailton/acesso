@@ -193,13 +193,30 @@
 <div class="main">
   <div class="main-inner">
     <div class="container">
+      <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' && 
+      $this->router->fetch_class() . '-' . $this->router->fetch_method() !='user-index'): ?>
+      <div class="row">
+        <div class="span12">
+          <div class="widget">
+            <div class="widget-header">
+              <i class="icon-list-alt"></i>
+              <h3><?php echo $title; ?></h3>
+            </div> <!-- /widget-header -->
+          <?php endif; ?>
 
-      <?php echo ( isset( $content ) ) ? $content : ''; ?>
-      <!-- /Conteúdo -->
+          <?php echo ( isset( $content ) ) ? $content : ''; ?>
 
-      <!-- Rodapé -->
-    </div> <!-- /container -->
-  </div> <!-- /main-inner -->
+          <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' && 
+          $this->router->fetch_class() . '-' . $this->router->fetch_method() !='user-index' ): ?>
+        </div> <!-- /widget --> 
+      </div> <!-- /spa12 -->
+    </div> <!-- /row -->
+  <?php endif;  ?>
+  <!-- /Conteúdo -->
+
+  <!-- Rodapé -->
+</div> <!-- /container -->
+</div> <!-- /main-inner -->
 </div> <!-- /main -->
 <!-- /Rodapé -->
 
