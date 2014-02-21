@@ -33,36 +33,36 @@ if( $users_data !== FALSE )
 		}
 
 		echo '
-			<tr id="' . $user->user_id . '" class="' . $class . '">
-				<td class="delete-column">
-					' . secure_anchor( 
-							'administration/delete_user/' . $user->user_id . $current_page , 
-							img( array( 'src' => 'img/tablesorter/delete.png' ) ),
-							array( 'class' => 'delete-img' )
-						 ) . '
-				</td>
-				<td>
-					' . secure_anchor( 
-							'administration/update_user/' . $user->user_id, 
-							img( array( 'src' => 'img/tablesorter/edit.png' ) ),
-							array( 'class' => 'edit-img' )
-						 ) . '
-				</td>
-				<td>' 
-					. $user->user_name . 
+		<tr id="' . $user->user_id . '" class="' . $class . '">
+			<td>' 
+				. $user->user_name . 
 				'</td>
 				<td>' 
 					. $user->user_email . 
-				'</td>
-				<td>' 
-					. $roles[$user->user_level] . 
-				'</td>
-			</tr>
-		';
+					'</td>
+					<td>' 
+						. $roles[$user->user_level] . 
+						'</td>
+						<td class="delete-column" style="text-align: center;">
+							' . secure_anchor( 
+								'administration/delete_user/' . $user->user_id . $current_page , 
+								img( array( 'src' => 'img/tablesorter/delete.png' ) ),
+								array( 'class' => 'delete-img' )
+								) . '
+						</td>
+						<td style="text-align: center;">
+							' . secure_anchor( 
+								'administration/update_user/' . $user->user_id, 
+								img( array( 'src' => 'img/tablesorter/edit.png' ) ),
+								array( 'class' => 'edit-img' )
+								) . '
+						</td>
+					</tr>
+					';
 
-		$i++;
-	}
-}
+					$i++;
+				}
+			}
 
-/* End of file manage_users_table_content.php */
+			/* End of file manage_users_table_content.php */
 /* Location: /application/views/administration/manage_users_table_content.php */

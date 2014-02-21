@@ -152,6 +152,7 @@ class Administration extends MY_Controller {
 				$view_data = $this->_manage_users_table_content( $page );
 
 				$data = array(
+					'title' => 'Gerenciar usuários',
 					'javascripts' => array(
 						'js/administration/manage-users.js'
 					),
