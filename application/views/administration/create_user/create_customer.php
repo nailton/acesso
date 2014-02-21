@@ -1,228 +1,268 @@
 <?php echo form_open( '', array( 'class' => 'std-form', 'style' => 'margin-top:24px;' ) ); ?>
-	<div class="form-column-left">
-		<fieldset>
-			<legend>Customer Information:</legend>
-			<div class="form-row">
 
-				<?php
-					// USERNAME LABEL AND INPUT ***********************************
-					echo form_label('Username','user_name',array('class'=>'form_label'));
+<ul class="nav nav-tabs">
+	<li  class="active">
+		<a href="#formcontrols" data-toggle="tab">Perfil Cliente</a>
+	</li>
+</ul>
 
-					echo input_requirement('*');
+<br>
 
-					$input_data = array(
-						'name'		=> 'user_name',
-						'id'		=> 'user_name',
-						'class'		=> 'form_input alpha_numeric',
-						'value'		=> set_value('user_name'),
-						'maxlength'	=> MAX_CHARS_4_USERNAME,
-					);
 
-					echo form_input( $input_data );
+<div id="edit-profile" class="form-horizontal">
 
-				?>
+	<div class="control-group">                     
+		<?php 
+	          // USERNAME LABEL AND INPUT ***********************************
+		echo form_label('Usuário','user_name',array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
 
-			</div>
-			<div class="form-row">
+			$input_data = array(
+				'name'    => 'user_name',
+				'id'    => 'username',
+				'class'   => 'span4',
+				'value'   => set_value('user_name'),
+				'maxlength' => MAX_CHARS_4_USERNAME,
+				);
 
-				<?php
-					// PASSWORD LABEL AND INPUT ***********************************
-					echo form_label('Password','user_pass',array('class'=>'form_label'));
+			echo form_input( $input_data );
 
-					echo input_requirement('*');
+			?>
 
-					$input_data = array(
-						'name'		=> 'user_pass',
-						'id'		=> 'user_pass',
-						'class'		=> 'form_input password',
-						'value'		=> set_value('user_pass'),
-					);
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-					echo form_password( $input_data );
-				?>
 
-			</div>
-			<div class="form-row">
+	<div class="control-group">                     
+		<?php 
+	            // PASSWORD LABEL AND INPUT ***********************************
+		echo form_label('Senha','user_pass',array('class'=>'control-label'));
 
-				<?php
-					// SHOW PASSWORD CHECKBOX
-					echo form_label('Show Password','show-password',array('class'=>'form_label'));
+		?>
+		<div class="controls">
+			<?php
 
-					echo input_requirement();
+			$input_data = array(
+				'name'    => 'user_pass',
+				'id'    => 'user_pass',
+				'class'   => 'span4',
+				'value'   => set_value('user_pass'),
+				);
 
-					$checkbox_data = array(
-						'id' => 'show-password'
-					);
+			echo form_password( $input_data );
 
-					echo form_checkbox( $checkbox_data );
-				?>
+			?>
 
-			</div>
-			<div class="form-row">
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-				<?php
-					// EMAIL ADDRESS LABEL AND INPUT ******************************
-					echo form_label('Email Address','user_email',array('class'=>'form_label'));
+	<div class="control-group">                     
+		<?php 
+	          // SHOW PASSWORD CHECKBOX
+		echo form_label('Mostrar senha','show-password',array('class'=>'control-label'));
 
-					echo input_requirement('*');
+		?>
+		<div class="controls">
+			<?php
 
-					$input_data = array(
-						'name'		=> 'user_email',
-						'id'		=> 'user_email',
-						'class'		=> 'form_input max_chars',
-						'value'		=> set_value('user_email'),
-						'maxlength'	=> '255',
-					);
+			$checkbox_data = array(
+				'id' => 'show-password'
+				);
 
-					echo form_input( $input_data );
-				?>
+			echo form_checkbox( $checkbox_data );
 
-			</div>
-			<div class="form-row">
+			?>
 
-				<?php
-					// FIRST NAME LABEL AND INPUT ***********************************
-					echo form_label('First Name','first_name',array('class'=>'form_label'));
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-					echo input_requirement('*');
 
-					$input_data = array(
-						'name'		=> 'first_name',
-						'id'		=> 'first_name',
-						'class'		=> 'form_input first_name',
-						'value'		=> set_value('first_name'),
-						'maxlength'	=> '20',
-					);
+	<div class="control-group">                     
+		<?php 
+	               // EMAIL ADDRESS LABEL AND INPUT ******************************
+		echo form_label('E-mail','user_email',array('class'=>'control-label'));
 
-					echo form_input($input_data);
+		?>
+		<div class="controls">
+			<?php
 
-				?>
+			$input_data = array(
+				'name'    => 'user_email',
+				'id'    => 'user_email',
+				'class'   => 'span4',
+				'value'   => set_value('user_email'),
+				'maxlength' => '255',
+				);
 
-			</div>
-			<div class="form-row">
+			echo form_input( $input_data );
 
-				<?php
-					// LAST NAME LABEL AND INPUT ***********************************
-					echo form_label('Last Name','last_name',array('class'=>'form_label'));
+			?>
 
-					echo input_requirement('*');
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-					$input_data = array(
-						'name'		=> 'last_name',
-						'id'		=> 'last_name',
-						'class'		=> 'form_input last_name',
-						'value'		=> set_value('last_name'),
-						'maxlength'	=> '20',
-					);
+	<div class="control-group">                     
+		<?php 
+	           // FIRST NAME LABEL AND INPUT ***********************************
+		echo form_label('Primeiro nome','first_name',array('class'=>'control-label'));
 
-					echo form_input($input_data);
+		?>
+		<div class="controls">
+			<?php
 
-				?>
+			$input_data = array(
+				'name'    => 'first_name',
+				'id'    => 'first_name',
+				'class'   => 'span4',
+				'value'   => set_value('first_name'),
+				'maxlength' => '20',
+				);
 
-			</div>
-			<div class="form-row">
+			echo form_input($input_data);
 
-				<?php
-					// STREET ADDRESS LABEL AND INPUT ***********************************
-					echo form_label('Street Address','street_address',array('class'=>'form_label'));
+			?>
 
-					echo input_requirement('*');
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-					$input_data = array(
-						'name'		=> 'street_address',
-						'id'		=> 'street_address',
-						'class'		=> 'form_input max_chars',
-						'value'		=> set_value('street_address'),
-						'maxlength'	=> '60',
-					);
+	<div class="control-group">                     
+		<?php 
+	         // LAST NAME LABEL AND INPUT ***********************************
+		echo form_label('Sobrenome','last_name',array('class'=>'control-label'));
 
-					echo form_input($input_data);
+		?>
+		<div class="controls">
+			<?php
 
-				?>
+			$input_data = array(
+				'name'    => 'last_name',
+				'id'    => 'last_name',
+				'class'   => 'span4',
+				'value'   => set_value('last_name'),
+				'maxlength' => '20',
+				);
 
-			</div>
-			<div class="form-row">
+			echo form_input($input_data);
 
-				<?php
-					// CITY LABEL AND INPUT ***********************************
-					echo form_label('City','city',array('class'=>'form_label'));
+			?>
 
-					echo input_requirement('*');
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
+	
+	<div class="control-group">                     
+		<?php 
+   // STREET ADDRESS LABEL AND INPUT ***********************************
+		echo form_label('Endereço','street_address',array('class'=>'control-label'));
 
-					$input_data = array(
-						'name'		=> 'city',
-						'id'		=> 'city',
-						'class'		=> 'form_input max_chars',
-						'value'		=> set_value('city'),
-						'maxlength'	=> '60',
-					);
+		?>
+		<div class="controls">
+			<?php
 
-					echo form_input($input_data);
+			$input_data = array(
+				'name'    => 'street_address',
+				'id'    => 'street_address',
+				'class'   => 'span4',
+				'value'   => set_value('street_address'),
+				'maxlength' => '60',
+				);
 
-				?>
+			echo form_input($input_data);
 
-			</div>
-			<div class="form-row">
+			?>
 
-				<?php
-					// STATE LABEL AND INPUT ***********************************
-					echo form_label('State','state',array('class'=>'form_label'));
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-					echo input_requirement('*');
+	<div class="control-group">                     
+		<?php 
+      // CITY LABEL AND INPUT ***********************************
+		echo form_label('Cidade','city',array('class'=>'control-label'));
 
-					$input_data = array(
-						'name'		=> 'state',
-						'id'		=> 'state',
-						'class'		=> 'form_input max_chars',
-						'value'		=> set_value('state'),
-						'maxlength'	=> '50',
-					);
+		?>
+		<div class="controls">
+			<?php
 
-					echo form_input($input_data);
+			$input_data = array(
+				'name'    => 'city',
+				'id'    => 'city',
+				'class'   => 'span4',
+				'value'   => set_value('city'),
+				'maxlength' => '60',
+				);
 
-				?>
+			echo form_input($input_data);
 
-			</div>
-			<div class="form-row">
+			?>
 
-				<?php
-					// ZIP LABEL AND INPUT ***********************************
-					echo form_label('Zip','zip',array('class'=>'form_label'));
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
+	
+	<div class="control-group">                     
+		<?php 
+          // STATE LABEL AND INPUT ***********************************
+		echo form_label('Estado','state',array('class'=>'control-label'));
 
-					echo input_requirement('*');
+		?>
+		<div class="controls">
+			<?php
 
-					$input_data = array(
-						'name'		=> 'zip',
-						'id'		=> 'zip',
-						'class'		=> 'form_input max_chars',
-						'value'		=> set_value('zip'),
-						'maxlength'	=> '10',
-					);
+			$input_data = array(
+				'name'    => 'state',
+				'id'    => 'state',
+				'class'   => 'span4',
+				'value'   => set_value('state'),
+				'maxlength' => '50',
+				);
 
-					echo form_input($input_data);
+			echo form_input($input_data);
 
-				?>
+			?>
 
-			</div>
-		</fieldset>
-		<div class="form-row">
-			<div id="submit_box">
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
 
-				<?php
-					// SUBMIT BUTTON **************************************************************
-					$input_data = array(
-						'name'		=> 'form_submit',
-						'id'		=> 'submit_button',
-						'value'		=> 'Create User'
-					);
-					echo form_submit($input_data);
-				?>
+	<div class="control-group">                     
+		<?php 
+           // ZIP LABEL AND INPUT ***********************************
+		echo form_label('CEP','zip',array('class'=>'control-label'));
 
-			</div>
-		</div>
-	</div>
+		?>
+		<div class="controls">
+			<?php
+
+			$input_data = array(
+				'name'    => 'zip',
+				'id'    => 'zip',
+				'class'   => 'span4',
+				'value'   => set_value('zip'),
+				'maxlength' => '10',
+				);
+
+			echo form_input($input_data);
+
+			?>
+
+		</div> <!-- /controls -->       
+	</div> <!-- /control-group -->
+
+	<div class="form-actions">
+		<?php
+          // SUBMIT BUTTON **************************************************************
+		$input_data = array(
+			'name'    => 'form_submit',
+			'id'    => 'submit_button',
+			'value'   => 'Criar usuário',
+			'class'   => 'btn btn-primary'
+			);
+		echo form_submit($input_data);
+		?>
+
+	</div> <!-- /form-actions -->
 </form>
 
+</div><!-- /form-horizontal -->
 <?php
 
 /* End of file create_customer.php */

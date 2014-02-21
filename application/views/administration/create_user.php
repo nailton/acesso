@@ -14,33 +14,28 @@
 <div class="widget-content">
 
 	<?php 
-	echo '<h1>' . ( isset( $type ) ? ucfirst( $type ) . ' Criação' : 'Criação do usuário' ) . '</h1>';
+	// echo '<h1>' . ( isset( $type ) ? ucfirst( $type ) . ' Criação' : 'Criação do usuário' ) . '</h1>';
 
+	// $type = ($type == 'customer') ? 'Cliente' : 'Gerente';
 	if( isset( $validation_passed, $user_created ) )
 	{
 		echo '
-		<div class="feedback confirmation">
-			<p class="feedback_header">
-				The new ' . $type . ' has been successfully created.
-			</p>
-		</div>
-		';
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			O novo <strong>usuário</strong> foi criado com sucesso.
+		</div>';
 	}
 	else if( isset( $validation_errors ) )
 	{
 		echo '
-		<div class="feedback error_message">
-			<p class="feedback_header">
-				' . ucfirst( $type ) . ' Creation Contained The Following Errors:
-			</p>
+		<div class="alert">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Erros durante a criação:</strong>
 			<ul>
 				' . $validation_errors . '
 			</ul>
-			<p>
-				' . strtoupper( $type ) . ' NOT CREATED
-			</p>
-		</div>
-		';
+			<p>Não foi possível criar o usuário.</p>
+		</div>';
 	}
 
 	if( isset( $level, $type ) )
@@ -71,4 +66,4 @@
 
 	<?php 
 	/* End of file create_user.php */
-/* Location: /application/views/administration/create_user.php */
+	/* Location: /application/views/administration/create_user.php */
