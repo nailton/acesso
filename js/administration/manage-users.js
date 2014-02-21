@@ -128,7 +128,7 @@
 						$('#' + tr_id).addClass('pink');
 						$('#delete-confirmation p')
 							.css('display', 'block')
-							.html('MARKED ROWS HAVE BEEN DELETED')
+							.html('<strong>Atenção!</strong> Linhas marcadas foram apagados.')
 							.delay(2500)
 							.fadeOut('slow');
 

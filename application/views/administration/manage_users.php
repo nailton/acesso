@@ -19,21 +19,21 @@
 	</ul>
 
 	<br>
-	<div id="network-activity-indicator">
-		<div class="alert alert-info" id="network-activity">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<strong>Pesquisando...</strong> Aguarde um momento. <br>
-			<?php
-			echo img( array( 'src' => 'img/network_activity.gif', 'id' => 'network-activity', 'width' => 200, 'height' => 13 ) );
-			?>
-		</div>
-	</div>
-	<div class="alert" id="delete-confirmation">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<strong>Atenção!</strong> Linhas marcadas foram apagados.
-	</div>
 	<div id="edit-profile" class="form-horizontal">
 		<form id="search-controls">
+			<div id="network-activity-indicator">
+				<div class="alert alert-info" id="network-activity">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Realizando a ação...</strong> Aguarde um momento. <br>
+					<?php
+					echo img( array( 'src' => 'img/network_activity.gif', 'width' => 200, 'height' => 13 ) );
+					?>
+				</div>
+			</div>
+			<div id="delete-confirmation">
+				<p><strong>Atenção!</strong> Linhas marcadas foram apagados.</p>
+			</div>
+
 			<div class="control-group">                     
 				<label class="control-label" for="search_in">Pesquisar</label>
 				<div class="controls">
