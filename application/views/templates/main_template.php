@@ -79,56 +79,62 @@
        // Show the login / logout ...
        // echo ( isset( $_user_first_name ) ) ? 'Welcome, ' . $_user_first_name . ' &bull; ' . secure_anchor('user','User Index') . ' &bull; ' . secure_anchor('user/logout','Logout') : secure_anchor('register','Register') . ' &bull; ' . secure_anchor('user','Login');
 
-    ?>
-    <?php if(isset( $_user_first_name )){ ?>
-    <!-- TOPO 1-->
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container"> 
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </a>
-            <!-- <a class="brand" href="#">Controle de Acessos </a> -->
-            <?php 
-            echo anchor('/', 'Controle de Acessos', array( 'id' => 'active', 'class'=>'brand' ));
-            ?>
-            <div class="nav-collapse">
-              <ul class="nav pull-right">
+    if (empty($_SERVER['HTTP_REFERER'])) {
+      $http_referer = "index.php";
+    } else {
+     $http_referer = $_SERVER['HTTP_REFERER'];
+   }
+
+   ?>
+   <?php if(isset( $_user_first_name )){ ?>
+   <!-- TOPO 1-->
+   <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container"> 
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> </a>
+          <!-- <a class="brand" href="#">Controle de Acessos </a> -->
+          <?php 
+          echo anchor('/', 'Gestão de acessos', array( 'id' => 'active', 'class'=>'brand' ));
+          ?>
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon-cog"></i> Conta <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="javascript:;">Configurações</a></li>
+                    <li><a href="javascript:;">Ajuda</a></li>
+                  </ul>
+                </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="icon-cog"></i> Conta <b class="caret"></b></a>
+                    <i class="icon-user"></i>  <?php echo $_user_first_name ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="javascript:;">Configurações</a></li>
-                      <li><a href="javascript:;">Ajuda</a></li>
+                      <li><?php echo secure_anchor('user/self_update','Perfil') ?></li>
+                      <li><?php echo secure_anchor('user/logout','Logout') ?></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="icon-user"></i>  <?php echo $_user_first_name ?><b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                        <li><?php echo secure_anchor('user/self_update','Perfil') ?></li>
-                        <li><?php echo secure_anchor('user/logout','Logout') ?></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="navbar-search pull-right">
-                    <input type="text" class="search-query" placeholder="Search">
-                  </form>
-                </div>
-                <!--/.nav-collapse --> 
+                </ul>
+                <form class="navbar-search pull-right">
+                  <input type="text" class="search-query" placeholder="Search">
+                </form>
               </div>
-              <!-- /container --> 
+              <!--/.nav-collapse --> 
             </div>
-            <!-- /navbar-inner --> 
+            <!-- /container --> 
           </div>
-          <div class="subnavbar">
-            <div class="subnavbar-inner">
-              <div class="container">
-                <ul class="mainnav">
-                  <li class="active"><a href="index.php"><i class="icon-dashboard"></i><span>Geral</span> </a> </li>
-                  <li><a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><i class="icon-arrow-left"></i><span>Voltar</span> </a> </li>
-                 <!--  <li><a href="index.php"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
+          <!-- /navbar-inner --> 
+        </div>
+        <div class="subnavbar">
+          <div class="subnavbar-inner">
+            <div class="container">
+              <ul class="mainnav">
+                <li class="active"><a href="index.php"><i class="icon-dashboard"></i><span>Geral</span> </a> </li>
+                <li><a href="<?php echo $http_referer; ?>"><i class="icon-arrow-left"></i><span>Voltar</span> </a> </li>
+                  <!--  <li><a href="index.php"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
                   <li><a href="index.php"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
                   <li><a href="index.php"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
                   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>

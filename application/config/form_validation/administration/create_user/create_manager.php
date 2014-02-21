@@ -37,11 +37,11 @@ $config['manager_creation_rules'] = array(
 		'label' => 'FIRST NAME',
 		'rules' => 'trim|required|xss_clean'
 	),
-	array(
-		'field' => 'license_number',
-		'label' => 'LICENSE NUMBER',
-		'rules' => 'trim|required|alpha_numeric|max_length[8]'
-	),
+	// array(
+	// 	'field' => 'license_number',
+	// 	'label' => 'LICENSE NUMBER',
+	// 	'rules' => 'trim|required|alpha_numeric|max_length[8]'
+	// ),
 	array(
 		'field' => 'phone_number',
 		'label' => 'PHONE NUMBER',
