@@ -352,7 +352,7 @@ class Administration extends MY_Controller {
 			$view_data['user_data'] = $user_row;
 
 			$data = array(
-
+				'title' => 'Atualizar dados',
 				// Load the show password script
 				'javascripts' => array(
 					'js/jquery.passwordToggle-1.1.js',
