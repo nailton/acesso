@@ -36,15 +36,15 @@
 	// Always add the main stylesheet
 
 	echo link_tag( array( 'href' => 'css/bootstrap.min.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-	
+
 	echo link_tag( array( 'href' => 'css/bootstrap-responsive.min.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-	
+
 	echo link_tag( array( 'href' => 'css/font-awesome.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-	
+
 	echo link_tag( array( 'href' => 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-	
+
 	echo link_tag( array( 'href' => 'css/style.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-	
+
 	// echo link_tag( array( 'href' => 'css/pages/signin.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
 
 	// echo link_tag( array( 'href' => 'css/pages/dashboard.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
@@ -58,7 +58,7 @@
 		}
 	}
 
-	
+
 	?>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -90,13 +90,13 @@
    <!-- TOPO 1-->
    <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container"> 
+      <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> </a>
           <!-- <a class="brand" href="#">Controle de Acessos </a> -->
-          <?php 
+          <?php
           echo anchor('/', 'Gestão de acessos', array( 'id' => 'active', 'class'=>'brand' ));
           ?>
           <div class="nav-collapse">
@@ -105,7 +105,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="icon-cog"></i> Conta <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:;">Configurações</a></li>
+                    <li><a href="index.php/register/settings">Modo de registro</a></li>
                     <li><a href="javascript:;">Ajuda</a></li>
                   </ul>
                 </li>
@@ -122,11 +122,11 @@
                   <input type="text" class="search-query" placeholder="Search">
                 </form>
               </div>
-              <!--/.nav-collapse --> 
+              <!--/.nav-collapse -->
             </div>
-            <!-- /container --> 
+            <!-- /container -->
           </div>
-          <!-- /navbar-inner --> 
+          <!-- /navbar-inner -->
         </div>
         <div class="subnavbar">
           <div class="subnavbar-inner">
@@ -149,9 +149,9 @@
                   </li> -->
                 </ul>
               </div>
-              <!-- /container --> 
+              <!-- /container -->
             </div>
-            <!-- /subnavbar-inner --> 
+            <!-- /subnavbar-inner -->
           </div>
           <!-- /subnavbar -->
           <?php }else{ ?>
@@ -173,7 +173,7 @@
                 <div class="nav-collapse">
                   <ul class="nav pull-right">
 
-                    <li class="">           
+                    <li class="">
            <?php        // Show the login / logout ...
            echo ( isset( $_user_first_name ) ) ? '<a>Usuário: ' . $_user_first_name . '</a></li><li>' . secure_anchor('user/logout','Logout') : secure_anchor('register','Registro') . '</li><li class=""> ' . secure_anchor('user','Login'); ?>
          </li>
@@ -182,7 +182,7 @@
         <?php endif; ?>
       </ul>
 
-    </div><!--/.nav-collapse -->  
+    </div><!--/.nav-collapse -->
 
   </div> <!-- /container -->
 
@@ -199,7 +199,7 @@
 <div class="main">
   <div class="main-inner">
     <div class="container">
-      <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' && 
+      <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' &&
       $this->router->fetch_class() . '-' . $this->router->fetch_method() !='user-index'): ?>
       <div class="row">
         <div class="span12">
@@ -212,9 +212,9 @@
 
           <?php echo ( isset( $content ) ) ? $content : ''; ?>
 
-          <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' && 
+          <?php if($this->router->fetch_class() . '-' . $this->router->fetch_method() !='static_pages-index' &&
           $this->router->fetch_class() . '-' . $this->router->fetch_method() !='user-index' ): ?>
-        </div> <!-- /widget --> 
+        </div> <!-- /widget -->
       </div> <!-- /spa12 -->
     </div> <!-- /row -->
   <?php endif;  ?>
@@ -233,7 +233,7 @@ echo script_tag( 'js/bootstrap.js' ) . "\n";
 
 	// Add any additional javascript
 if( isset( $javascripts ) )
-{ 
+{
  for( $x=0; $x<=count( $javascripts )-1; $x++ )
  {
   echo script_tag( $javascripts["$x"] ) . "\n";
@@ -244,7 +244,7 @@ if( isset( $javascripts ) )
 echo ( isset( $extra_head ) ) ? $extra_head : '';
 
 	// Add Google Analytics code if available in config
-if( ! empty( $tracking_code ) ) echo $tracking_code; 
+if( ! empty( $tracking_code ) ) echo $tracking_code;
 
 	// Insert any HTML before the closing body tag if desired
 if( isset( $final_html ) )

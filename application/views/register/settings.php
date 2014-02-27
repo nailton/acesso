@@ -12,147 +12,144 @@
  */
 ?>
 
-<h1>Registration Settings</h1>
+<div class="widget-content">
 
-<?php
+	<?php
 	$reg_mode = array(
-		'0' => 'ALL REGISTRATION CAPABILITY OFF',
-		'1' => 'REGISTRATION ALLOWED W/O VERIFICATION',
-		'2' => 'REGISTRATION ALLOWED W/ EMAIL VERIFICATION',
-		'3' => 'REGISTRATION ALLOWED BY ADMIN APPROVAL'
-	);
+		'0' => 'Capacidade de novos registros desabilitados',
+		'1' => 'Habilitado registro por verificação',
+		'2' => 'Habilitado registro por verificação no email',
+		'3' => 'Habilitado registro por verificação do administrador'
+		);
 
 	if( isset( $confirmation ) )
 	{
-		echo '<div class="feedback confirmation">
-				<p class="feedback_header">
-					The registration setting has been updated. Setting is now:
-				</p>
-				<p style="margin:.6em 0 0 0;">
-					<b>' . $reg_mode["$reg_setting"] . '</b>
-				</p>
-			</div>';
-	}
+		echo '<div class="alert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Atualizado!</strong> O modo de registro foi atualizado. O modo agora é:
+		<p style="margin:.6em 0 0 0;">
+			<b>' . $reg_mode["$reg_setting"] . '</b>
+		</p>
+	</div>';
+}
 ?>
 
 <?php echo form_open( '', array( 'class' => 'std-form', 'style' => 'margin-top:24px;' ) ); ?>
-	<div class="form-column-left">
-		<fieldset>
-			<legend>Registration Mode:</legend>
-			<div class="form-row">
-				<div class="radio-header">Modes:</div>
-				<div class="radio_set">
-					<div class="form-row">
-						<div class="form_radio_container">
 
-							<?php
-								// FIRST RADIO
-								$radio_data = array(
-									'name'		=> 'reg_setting',
-									'id'		=> 'setting-off',
-									'value'		=> '0',
-									'checked'	=> (isset($reg_setting) && $reg_setting == '0')? 'checked' : '',
-									'class'		=> 'form_radio'
-								);
-								echo form_radio($radio_data);
-							?>
+<ul class="nav nav-tabs">
+	<li  class="active">
+		<a href="#formcontrols" data-toggle="tab">Tipos</a>
+	</li>
+</ul>
 
-						</div>
+<br>
 
-						<?php
-							echo form_label('Off', 'setting-off', array('class'=>'radio_label'));
-						?>
 
-					</div>
-					<div class="form-row">
-						<div class="form_radio_container">
+<div id="edit-profile" class="form-horizontal">
 
-							<?php
-								// SECOND RADIO
-								$radio_data = array(
-									'name'		=> 'reg_setting',
-									'id'		=> 'setting-instant',
-									'value'		=> '1',
-									'checked'	=> (isset($reg_setting) && $reg_setting == '1')? 'checked' : '',
-									'class'		=> 'form_radio'
-								);
+	<div class="control-group">
+		<?php
+		echo form_label('Desligado', 'setting-off', array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
+                // FIRST RADIO
+			$radio_data = array(
+				'name'    => 'reg_setting',
+				'id'    => 'setting-off',
+				'value'   => '0',
+				'checked' => (isset($reg_setting) && $reg_setting == '0')? 'checked' : '',
+				'class'   => 'radio inline'
+				);
+			echo form_radio($radio_data);
+			?>
 
-								echo form_radio($radio_data);
-							?>
+		</div> <!-- /controls -->
+	</div> <!-- /control-group -->
 
-						</div>
+	<div class="control-group">
+		<?php
+		echo form_label('Imediato', 'setting-instant', array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
+                // SECOND RADIO
+			$radio_data = array(
+				'name'    => 'reg_setting',
+				'id'    => 'setting-instant',
+				'value'   => '1',
+				'checked' => (isset($reg_setting) && $reg_setting == '1')? 'checked' : '',
+				'class'   => 'radio inline'
+				);
 
-						<?php
-							echo form_label('Instant', 'setting-instant', array('class'=>'radio_label'));
-						?>
+			echo form_radio($radio_data);
+			?>
 
-					</div>
-					<div class="form-row">
-						<div class="form_radio_container">
+		</div> <!-- /controls -->
+	</div> <!-- /control-group -->
 
-							<?php
-								// THIRD RADIO
-								$radio_data = array(
-									'name'		=> 'reg_setting',
-									'id'		=> 'setting-email',
-									'value'		=> '2',
-									'checked'	=> (isset($reg_setting) && $reg_setting == '2')? 'checked' : '',
-									'class'		=> 'form_radio'
-								);
+	<div class="control-group">
+		<?php
+		echo form_label('Verificação por email', 'setting-email', array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
+                // THIRD RADIO
+			$radio_data = array(
+				'name'    => 'reg_setting',
+				'id'    => 'setting-email',
+				'value'   => '2',
+				'checked' => (isset($reg_setting) && $reg_setting == '2')? 'checked' : '',
+				'class'   => 'radio inline'
+				);
 
-								echo form_radio($radio_data);
-							?>
+			echo form_radio($radio_data);
+			?>
 
-						</div>
+		</div> <!-- /controls -->
+	</div> <!-- /control-group -->
 
-						<?php
-							echo form_label('Email Verification', 'setting-email', array('class'=>'radio_label'));
-						?>
+	<div class="control-group">
+		<?php
+		echo form_label('Pelo administrador', 'setting-admin', array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
+                // THIRD RADIO
+			$radio_data = array(
+				'name'    => 'reg_setting',
+				'id'    => 'setting-admin',
+				'value'   => '3',
+				'checked' => (isset($reg_setting) && $reg_setting == '3')? 'checked' : '',
+				'class'   => 'radio inline'
+				);
 
-					</div>
-					<div class="form-row">
-						<div class="form_radio_container">
+			echo form_radio($radio_data);
+			?>
 
-							<?php
-								// THIRD RADIO
-								$radio_data = array(
-									'name'		=> 'reg_setting',
-									'id'		=> 'setting-admin',
-									'value'		=> '3',
-									'checked'	=> (isset($reg_setting) && $reg_setting == '3')? 'checked' : '',
-									'class'		=> 'form_radio'
-								);
+		</div> <!-- /controls -->
+	</div> <!-- /control-group -->
 
-								echo form_radio($radio_data);
-							?>
+	<div class="form-actions">
+		<?php
+          // SUBMIT BUTTON **************************************************************
+		$input_data = array(
+			'name'    => 'reg_submit',
+			'id'    => 'submit_button',
+			'class'   => 'btn btn-primary',
+			'value'   => 'Salvar'
+			);
+		echo form_submit($input_data);
+		?>
 
-						</div>
-
-						<?php
-							echo form_label('Admin Approval', 'setting-admin', array('class'=>'radio_label'));
-						?>
-
-					</div>
-				</div>
-			</div>
-		</fieldset>
-		<div class="form-row">
-			<div id="submit_box">
-
-				<?php
-					// SUBMIT BUTTON **************************************************************
-					$input_data = array(
-						'name'		=> 'reg_submit',
-						'id'		=> 'submit_button',
-						'value'		=> 'Save'
-					);
-					echo form_submit($input_data);
-				?>
-
-			</div>
-		</div>
-	</div>
+	</div> <!-- /form-actions -->
 </form>
+
+</div><!-- /form-horizontal -->
+
+
+</div> <!-- /widget-content -->
+
 
 <?php
 /* End of file settings.php */

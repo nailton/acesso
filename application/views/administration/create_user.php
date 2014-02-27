@@ -13,7 +13,7 @@
 ?>
 <div class="widget-content">
 
-	<?php 
+	<?php
 	// echo '<h1>' . ( isset( $type ) ? ucfirst( $type ) . ' Criação' : 'Criação do usuário' ) . '</h1>';
 
 	// $type = ($type == 'customer') ? 'Cliente' : 'Gerente';
@@ -52,8 +52,8 @@
 			foreach( $roles as $k => $v )
 			{
 				if( $k < $auth_level )
-				{ 
-					$v1=array(1=>'Cliente', 6=>'Gerente', 9=>'Admin'); 
+				{
+					$v1=array(1=>'Cliente', 6=>'Gerente', 9=>'Admin');
 					echo '<li>' . secure_anchor( 'administration/create_user/' . $v, $v1[$k] ) . '</li>';
 				}
 			}
@@ -64,6 +64,6 @@
 	</div> <!-- /widget-content -->
 
 
-	<?php 
+	<?php
 	/* End of file create_user.php */
 	/* Location: /application/views/administration/create_user.php */

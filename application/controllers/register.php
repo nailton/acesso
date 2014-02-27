@@ -147,7 +147,13 @@ class Register extends MY_Controller {
 			// Get the new mode for display purposes
 			$view_data['reg_setting'] = $this->registration_model->get_reg_mode();
 
-			$data['content'] = $this->load->view( 'register/settings', $view_data, TRUE );
+			//OLD
+			// $data['content'] = $this->load->view( 'register/settings', $view_data, TRUE );
+
+			$data = array(
+				'title' => 'Modo de registro',
+				'content' => $this->load->view( 'register/settings', $view_data, TRUE )
+				);
 
 			$this->load->view( $this->template, $data );
 		}
@@ -251,9 +257,9 @@ class Register extends MY_Controller {
 	// --------------------------------------------------------------
 
 	/**
-	 * Confirmation, by email, to verify the registrant. 
-	 * 
-	 * @param  int  the registration ID 
+	 * Confirmation, by email, to verify the registrant.
+	 *
+	 * @param  int  the registration ID
 	 */
 	public function email_confirmation( $email_conf='' )
 	{
