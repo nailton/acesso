@@ -27,7 +27,7 @@ class Administration extends MY_Controller {
 	// --------------------------------------------------------------
 
 	/**
-	 * Create a user 
+	 * Create a user
 	 */
 	public function create_user( $type = '' )
 	{
@@ -111,7 +111,7 @@ class Administration extends MY_Controller {
 	// --------------------------------------------------------------
 
 	/**
-	 * Manage users 
+	 * Manage users
 	 *
 	 * @param  int  the pagination page number
 	 */
@@ -169,7 +169,7 @@ class Administration extends MY_Controller {
 
 	/**
 	 * Create user management table content
-	 * 
+	 *
 	 * @param  int     the pagination page number
 	 * @param  mixed   NULL if a standard page request or json if an ajax request
 	 */
@@ -259,8 +259,8 @@ class Administration extends MY_Controller {
 				if( $this->input->is_ajax_request() )
 				{
 					// Must pass token match and delete_user must return TRUE
-					if( 
-						$this->tokens->match && 
+					if(
+						$this->tokens->match &&
 						$this->user_model->delete_user( $user_to_delete, $this->auth_level )
 					)
 					{
@@ -382,10 +382,10 @@ class Administration extends MY_Controller {
 	/**
 	 * Deny access and manage denied access to an IP, IP block, etc.
 	 *
-	 * Here you can deny access or manage the deny list in 
-	 * your local Apache configuration file. Please note that we've 
+	 * Here you can deny access or manage the deny list in
+	 * your local Apache configuration file. Please note that we've
 	 * all had experiences where a little mistake in one of these
-	 * files can bring down the whole website. For this reason, 
+	 * files can bring down the whole website. For this reason,
 	 * access is restricted to admin only.
 	 */
 	public function deny_access()
@@ -406,6 +406,7 @@ class Administration extends MY_Controller {
 			}
 
 			$data = array(
+				'title' => 'Negar acesso',
 				'content' => $this->load->view( 'administration/deny_access', ( isset( $view_data ) ) ? $view_data : '', TRUE ),
 				'javascripts' => array(
 					'js/jquery.char-limiter-3.0.0.js',
