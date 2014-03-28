@@ -13,25 +13,25 @@
 
 /*
 | -----------------------------------------------------------------
-|						DISABLE INSTALLER						
+|						DISABLE INSTALLER
 | -----------------------------------------------------------------
 | If set to TRUE, the init controller is disabled.
-| If set to FALSE, the init controller is enabled, and you will 
+| If set to FALSE, the init controller is enabled, and you will
 | be able to populate the database, create an admin, and create
 | test users.
-| 
+|
 */
 
 $config['disable_installer'] = TRUE;
 
 /*
 | -----------------------------------------------------------------
-|						LEVELS AND ROLES							
+|						LEVELS AND ROLES
 | -----------------------------------------------------------------
 | This definition sets the levels and roles that will be used for authentication.
 |
-| Admin should remain being called "admin", but the key may be changed. 
-| Keep in mind that if you change the number to higher than 9, then the 
+| Admin should remain being called "admin", but the key may be changed.
+| Keep in mind that if you change the number to higher than 9, then the
 | user_level field of the users table will need to be adjusted.
 |
 | No user level should ever be set with a key of 0.
@@ -46,7 +46,7 @@ $config['levels_and_roles'] = array(
 
 /*
 | -----------------------------------------------------------------
-|							GROUPS							
+|							GROUPS
 | -----------------------------------------------------------------
 | This definition sets the groups of roles that will be used for authentication.
 |
@@ -58,19 +58,19 @@ $config['groups'] = array(
 
 /*
 | -----------------------------------------------------------------
-|						MAX_ALLOWED_ATTEMPTS						
+|						MAX_ALLOWED_ATTEMPTS
 | -----------------------------------------------------------------
 | This definition sets the maximum amount of failed login attempts
 | or failed password recovery attempts before the IP or username is
 | placed on hold.
-| 
+|
 */
 
 $config['max_allowed_attempts'] = 5;
 
 /*
 | -----------------------------------------------------------------
-|							DENY_ACCESS						
+|							DENY_ACCESS
 | -----------------------------------------------------------------
 | If for some reason login attempts exceed the max_login_attempts
 | value, then when they reach the number held in this definition,
@@ -78,17 +78,17 @@ $config['max_allowed_attempts'] = 5;
 | configuration file.
 |
 | SET TO ZERO TO DISABLE THIS FUNCTIONALITY
-| 
+|
 */
 
 $config['deny_access'] = 10;
 
 /*
 | -----------------------------------------------------------------
-|					DENIED ACCESS REASON						
+|					DENIED ACCESS REASON
 | -----------------------------------------------------------------
 | The reasons why an IP address may be in the deny list
-| 
+|
 */
 
 $config['denied_access_reason'] = array(
@@ -103,22 +103,22 @@ $config['denied_access_reason'] = array(
 
 /*
 | -----------------------------------------------------------------
-|					APACHE CONFIG FILE LOCATION						
+|					APACHE CONFIG FILE LOCATION
 | -----------------------------------------------------------------
 | The location, including filename, or your Apache config file.
-| 
+|
 */
 
 $config['apache_config_file_location'] = FCPATH . '.htaccess';
 
 /*
 | -----------------------------------------------------------------
-|							SECONDS_ON_HOLD							
+|							SECONDS_ON_HOLD
 | -----------------------------------------------------------------
-| This definition sets the amount of time an IP or username is on 
+| This definition sets the amount of time an IP or username is on
 | hold if the maximum amount of failed login attempts or failed
 | password recovery attempts is reached.
-| 
+|
 | 600 seconds is 10 minutes
 |
 */
@@ -127,10 +127,10 @@ $config['seconds_on_hold'] = 600;
 
 /*
 | -----------------------------------------------------------------
-|						DISALLOW_MULTIPLE_LOGINS					
+|						DISALLOW_MULTIPLE_LOGINS
 | -----------------------------------------------------------------
-| This setting attempts to either allow or disallow an account to be 
-| logged in by the same user on more than one device, or with more 
+| This setting attempts to either allow or disallow an account to be
+| logged in by the same user on more than one device, or with more
 | than one browser on the same device.
 |
 */
@@ -139,10 +139,10 @@ $config['disallow_multiple_logins'] = TRUE;
 
 /*
 | -----------------------------------------------------------------
-|						ALLOW REMEMBER ME							
+|						ALLOW REMEMBER ME
 | -----------------------------------------------------------------
-| This setting allows you to turn on and off the ability to have 
-| a persistant login where users may choose to stay logged in 
+| This setting allows you to turn on and off the ability to have
+| a persistant login where users may choose to stay logged in
 | even after the browser has closed.
 |
 */
@@ -151,7 +151,7 @@ $config['allow_remember_me'] = FALSE;
 
 /*
 | -----------------------------------------------------------------
-|					REMEMBER ME COOKIE NAME							
+|					REMEMBER ME COOKIE NAME
 | -----------------------------------------------------------------
 | This setting allows you to choose the name of the remember me cookie.
 | Remember that Internet Explorer doesn't like underscores.
@@ -162,7 +162,7 @@ $config['remember_me_cookie_name'] = 'rememberMe';
 
 /*
 | -----------------------------------------------------------------
-|					REMEMBER ME EXPIRATION							
+|					REMEMBER ME EXPIRATION
 | -----------------------------------------------------------------
 | How long (in seconds) the remember me funcationality allows the session to last.
 |
@@ -172,12 +172,12 @@ $config['remember_me_expiration'] = 93062220;
 
 /*
 | -----------------------------------------------------------------
-|					HTTP USER COOKIE NAME							
+|					HTTP USER COOKIE NAME
 | -----------------------------------------------------------------
 | This setting allows you to choose the name of the http user cookie.
-| While the authentication cookie is handled in the session, the 
-| http user cookie allows for the user data to be stored so that 
-| the user is semi-identifiable, or for other general purpose use 
+| While the authentication cookie is handled in the session, the
+| http user cookie allows for the user data to be stored so that
+| the user is semi-identifiable, or for other general purpose use
 | related to the logged in user. DO NOT USE FOR AUTHENTICATION!
 |
 */
@@ -186,13 +186,13 @@ $config['http_user_cookie_name'] = 'httpUser';
 
 /*
 | -----------------------------------------------------------------
-|				      TOKEN COOKIES CONFIG						
+|				      TOKEN COOKIES CONFIG
 | -----------------------------------------------------------------
 | This setting allows you to choose the name of the http token cookie,
 | and also the name of the https token cookie.
 |
 | The token jar size is the amount of tokens that can be held in each cookie.
-| 
+|
 | The token name is the name of the form element holding the token value.
 |
 */
@@ -204,12 +204,12 @@ $config['token_name']          = 'token';
 
 /*
 | -----------------------------------------------------------------
-|			        SELECTED PROFILE COLUMNS							
+|			        SELECTED PROFILE COLUMNS
 | -----------------------------------------------------------------
 | An array of profile data to select when logging in or checking login.
 | Anything in this array should exist in all user profile tables.
 | The data is made available in the HTTP user cookie, in views, and in
-| config items. Leave the array empty if you don't want to select any 
+| config items. Leave the array empty if you don't want to select any
 | of the logged in user's profile data.
 |
 */
@@ -221,7 +221,7 @@ $config['selected_profile_columns'] = array(
 
 /*
 | -----------------------------------------------------------------
-|					RECOVERY CODE EXPIRATION							
+|					RECOVERY CODE EXPIRATION
 | -----------------------------------------------------------------
 | How long (in seconds) the password recovery code is good for.
 | The default is two hours.
@@ -232,12 +232,12 @@ $config['recovery_code_expiration'] = 60 * 60 * 2;
 
 /*
 | -----------------------------------------------------------------
-|				DELETE SESSION COOKIE ON LOGOUT							
+|				DELETE SESSION COOKIE ON LOGOUT
 | -----------------------------------------------------------------
 | When the user logs out, their session cookie can either have
 | the userdata unset, or you can choose to have the cookie completely
 | deleted. Set to FALSE to keep the cookie, TRUE to delete it.
-| By default, CodeIgniter just deletes the userdata, so set to 
+| By default, CodeIgniter just deletes the userdata, so set to
 | FALSE if you want to maintain this behavior.
 |
 | Note: unless you set 'show_login_form_on_logout' to FALSE,
@@ -248,7 +248,7 @@ $config['delete_session_cookie_on_logout'] = FALSE;
 
 /*
 | -----------------------------------------------------------------
-|				SHOW LOGIN FORM ON LOGOUT							
+|				SHOW LOGIN FORM ON LOGOUT
 | -----------------------------------------------------------------
 | When the user logs out, they can be presented with a login form
 | on the logout page, or else just show the logout confirmation page.

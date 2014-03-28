@@ -22,7 +22,7 @@
 			echo '
 			<div class="feedback confirmation">
 				<p class="feedback_header">
-					The IP address was added to the deny list.
+					O endereço IP foi adicionado à lista de negações.
 				</p>
 			</div>
 			';
@@ -32,7 +32,7 @@
 			echo '
 			<div class="feedback confirmation">
 				<p class="feedback_header">
-					The specified IP address(es) were removed from the deny list.
+					O endereço de IP especificada (s) foram removidos da lista de negação.
 				</p>
 			</div>
 			';
@@ -42,13 +42,13 @@
 			echo '
 			<div class="feedback error_message">
 				<p class="feedback_header">
-					Your attempt to update the deny list contained the following errors:
+					Sua tentativa de atualizar a lista de negar continha os seguintes erros:
 				</p>
 				<ul>
 					' . $validation_errors . '
 				</ul>
 				<p>
-					NO CHANGE TO DENY LIST
+					NENHUMA MUDANÇA DE NEGAR LISTA
 				</p>
 			</div>
 			';
@@ -69,7 +69,7 @@
 			<div class="control-group">
 				<?php
         			 // IP ADDRESS ***********************************
-				echo form_label('IP Address','ip_address',array('class'=>'control-label'));
+				echo form_label('Endereço IP','ip_address',array('class'=>'control-label'));
 
 				?>
 				<div class="controls">
@@ -93,7 +93,7 @@
 			<div class="control-group">
 				<?php
           // DENIAL REASON SELECTION ***************************************
-				echo form_label('Denial Reason','reason_code',array('class'=>'control-label'));
+				echo form_label('Motivo da negação','reason_code',array('class'=>'control-label'));
 
 				?>
 				<div class="controls">
@@ -129,15 +129,15 @@
 		</form>
 
   <div id="table-wrapper">
-    <h2>Deny List</h2>
+    <h2>Negar lista</h2>
     <div id="table-wrapper">
-      <table id="myTable" class="tablesorter">
+      <table id="myTable" class="tablesorter table table-striped">
         <thead>
           <tr>
             <th></th>
-            <th>IP Address</th>
-            <th>Reason Denied</th>
-            <th>Date Denied</th>
+            <th>Endereço IP</th>
+            <th>Motivo da negação</th>
+            <th>Data da negação</th>
           </tr>
         </thead>
         <tbody>
@@ -175,7 +175,7 @@
         </table>
       </div>
       <div id="decision_buttons">
-        <input type="submit" class="form_button" name="remove_selected" value="Remove Selected"  style="margin-top:10px;"/>
+        <input type="submit" class="form_button btn" name="remove_selected" value="Remover selecionado"  style="margin-top:10px;"/>
       </div>
     </div>
   </form>
