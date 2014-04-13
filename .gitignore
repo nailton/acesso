@@ -12,6 +12,8 @@ user_guide/*
 .hg_archival.txt
 readme.rst
 .hgtags
+.zedstate
+tags
 
 ###SublimeText###
 

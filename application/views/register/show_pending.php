@@ -12,7 +12,7 @@
  */
  ?>
 
-<h1>Pending Registrations</h1>
+<!-- <h1>As incrições pendentes</h1> -->
 
 <?php
 
@@ -21,66 +21,80 @@ if( isset( $admin_mode ) )
 	echo form_open();
 
 	?>
+<div class="widget-content">
 
-	<div id="table-wrapper">
-		<table id="myTable" class="tablesorter">
-			<thead>
-				<tr>
-					<th></th>
-					<th>Date Registered</th>
-					<th>Name</th>
-					<th>Username</th>
-					<th>Email Address</th>
-				</tr>
-			</thead>
-			<tbody>
+		<ul class="nav nav-tabs">
+			<li  class="active">
+				<a href="#formcontrols" data-toggle="tab">Adicionar Negação</a>
+			</li>
+		</ul>
 
-	<?php
+		<br>
 
-	if( isset( $pending_regs ) )
-	{
+  <div id="table-wrapper">
+    <table id="myTable" class="tablesorter">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Date Registered</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email Address</th>
+        </tr>
+      </thead>
+      <tbody>
 
-		foreach( $pending_regs as $reg )
-		{
-			echo '
-				<tr>
-					<td>
-						<input type="checkbox" name="selected_' . html_escape( $reg->reg_id ) . '" value="' . html_escape( $reg->reg_id ) . '" />
-					</td>
-					<td>
-						' . date( "M j, Y", $reg->reg_time ) . '
-					</td>
-					<td>' 
-						. html_escape( $reg->first_name ) . ' ' . html_escape( $reg->last_name ) .
-					'</td>
-					<td>' 
-						. html_escape( $reg->user_name ) . 
-					'</td>
-					<td>' 
-						. html_escape( $reg->user_email ) . 
-					'</td>
-				</tr>
-			';
-		}
-	}
+  <?php
 
-	?>
+  if( isset( $pending_regs ) )
+  {
 
-			</tbody>
-		</table>
-	</div>
-	<div id="decision_buttons">
-		<input type="submit" name="approve" value="Approve Selected" /><br />
-		<input type="submit" name="delete" value="Delete Selected" />
-	</div>
+    foreach( $pending_regs as $reg )
+    {
+      echo '
+        <tr>
+          <td>
+            <input type="checkbox" name="selected_' . html_escape( $reg->reg_id ) . '" value="' . html_escape( $reg->reg_id ) . '" />
+          </td>
+          <td>
+            ' . date( "M j, Y", $reg->reg_time ) . '
+          </td>
+          <td>'
+            . html_escape( $reg->first_name ) . ' ' . html_escape( $reg->last_name ) .
+          '</td>
+          <td>'
+            . html_escape( $reg->user_name ) .
+          '</td>
+          <td>'
+            . html_escape( $reg->user_email ) .
+          '</td>
+        </tr>
+      ';
+    }
+  }
+
+  ?>
+
+      </tbody>
+    </table>
+  </div>
+  <div id="decision_buttons">
+    <input type="submit" name="approve" value="Approve Selected" /><br />
+    <input type="submit" name="delete" value="Delete Selected" />
+  </div>
 </form>
-
 	<?php
 }
 else
 {
 	echo $reg_mode_mismatch;
 }
+?>
+	</div><!-- /form-horizontal -->
 
+
+</div> <!-- /widget-content -->
+
+<?php
 /* End of file show_pending.php */
 /* Location: /application/views/register/show_pending.php */

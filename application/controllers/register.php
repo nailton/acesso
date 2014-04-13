@@ -242,6 +242,7 @@ class Register extends MY_Controller {
 			}
 
 			$data = array(
+				'title' => 'Inscrições pendentes',
 				'javascripts' => array(
 					'js/jquery.tablesorter.js',
 					'js/register/pending_registrations.js'
