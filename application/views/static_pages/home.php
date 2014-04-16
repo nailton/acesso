@@ -24,71 +24,71 @@ if( isset( $auth_level ) ){ ?>
 						</div>
 						<!-- /widget-header -->
 						<div class="widget-content">
-							<div class="shortcuts"> 
-								<a href="javascript:;" class="shortcut"> 
+							<div class="shortcuts">
+								<a href="index.php/servicos/registrobr" class="shortcut">
 									<i class="shortcut-icon icon-globe"></i>
-									<span class="shortcut-label">Registro BR</span> 
-								</a> 
+									<span class="shortcut-label">Registro BR</span>
+								</a>
 
 								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-link"></i>
-									<span class="shortcut-label">Hospedagem</span> 
+									<span class="shortcut-label">Hospedagem</span>
 								</a>
 
 								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-upload-alt"></i>
-									<span class="shortcut-label">FTP</span> 
+									<span class="shortcut-label">FTP</span>
 								</a>
 
-								<a href="javascript:;" class="shortcut"> 
+								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-cogs"></i>
-									<span class="shortcut-label">SSH</span> 
-								</a> 
-
-								<a href="javascript:;" class="shortcut"> 
-									<i class="shortcut-icon icon-cloud"></i>
-									<span class="shortcut-label">Bancos dados</span> 
+									<span class="shortcut-label">SSH</span>
 								</a>
 
-								<a href="javascript:;" class="shortcut"> 
+								<a href="javascript:;" class="shortcut">
+									<i class="shortcut-icon icon-cloud"></i>
+									<span class="shortcut-label">Bancos dados</span>
+								</a>
+
+								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-cog"></i>
-									<span class="shortcut-label">Administrações</span> 
-								</a> 
+									<span class="shortcut-label">Administrações</span>
+								</a>
 
 								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-group"></i>
-									<span class="shortcut-label">Clientes</span> 
+									<span class="shortcut-label">Clientes</span>
 								</a>
 
 								<a href="javascript:;" class="shortcut">
-									<i class="shortcut-icon icon-envelope"></i> 
-									<span class="shortcut-label">E-mail</span> 
+									<i class="shortcut-icon icon-envelope"></i>
+									<span class="shortcut-label">E-mail</span>
 								</a>
 
 								<a href="index.php/user/acoes_usuario" class="shortcut">
 									<i class="shortcut-icon icon-user"></i>
-									<span class="shortcut-label">Usuários</span> 
+									<span class="shortcut-label">Usuários</span>
 								</a>
 
-								<a href="javascript:;" class="shortcut"> 
+								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-truck"></i>
-									<span class="shortcut-label">Terceirizado</span> 
-								</a> 
+									<span class="shortcut-label">Terceirizado</span>
+								</a>
 
-								<a href="javascript:;" class="shortcut"> 
+								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-bar-chart"></i>
-									<span class="shortcut-label">Admin estatística</span> 
-								</a> 
+									<span class="shortcut-label">Admin estatística</span>
+								</a>
 
 								<a href="javascript:;" class="shortcut">
 									<i class="shortcut-icon icon-phone"></i>
-									<span class="shortcut-label">Telefônico</span> 
+									<span class="shortcut-label">Telefônico</span>
 								</a>
-								
+
 							</div>
-							<!-- /shortcuts --> 
+							<!-- /shortcuts -->
 						</div>
-						<!-- /widget-content --> 
+						<!-- /widget-content -->
 					</div>
 					<!-- /widget -->
 
@@ -135,9 +135,9 @@ if( isset( $auth_level ) ){ ?>
 								</tbody>
 							</table>
 						</div>
-						<!-- /widget-content --> 
+						<!-- /widget-content -->
 					</div>
-					<!-- /widget --> 
+					<!-- /widget -->
 
 				</div>
 				<!-- /span6 -->
@@ -164,32 +164,32 @@ if( isset( $auth_level ) ){ ?>
 										<!-- .stat -->
 
 										<div class="stat"> <i class=" icon-cogs"></i> <span class="value">26</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 
 										<div class="stat"> <i class="icon-cloud"></i> <span class="value">56</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 									</div>
 
 									<div id="big_stats" class="cf">
 
 										<div class="stat"> <i class=" icon-cog"></i> <span class="value">19</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 
 										<div class="stat"> <i class="icon-group"></i> <span class="value">18</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 
 										<div class="stat"> <i class="icon-truck"></i> <span class="value">7</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 										<div class="stat"> <i class="icon-bar-chart"></i> <span class="value">27</span> </div>
-										<!-- .stat --> 
+										<!-- .stat -->
 									</div>
 
 									<!-- <div id="big_stats" class="cf"> -->
 									<!-- <div class="stat"> <i class="icon-phone"></i> <span class="value">25%</span> </div> -->
-									<!-- .stat --> 
+									<!-- .stat -->
 									<!-- </div> -->
 								</div>
-								<!-- /widget-content --> 
+								<!-- /widget-content -->
 
 							</div>
 						</div>
@@ -197,11 +197,11 @@ if( isset( $auth_level ) ){ ?>
 					<!-- /widget -->
 
 				</div>
-				<!-- /span6 --> 
+				<!-- /span6 -->
 			</div>
-			<!-- /row --> 
+			<!-- /row -->
 
-<?php 	} else { 
+<?php 	} else {
 
 	header('Location: index.php/user');
 
