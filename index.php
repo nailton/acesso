@@ -4,7 +4,7 @@
 | DEFAULT TIMEZONE
 | -----------------------------------------------------------------
 | Set to your local timezone
-| 
+|
 */
 
 	date_default_timezone_set('America/Sao_Paulo');
@@ -28,9 +28,9 @@
  *
  */
 	/**
-	 * Maintenance Mode is a custom Community Auth feature. 
-	 * If you enable maintenance mode, site visitors will 
-	 * see the maintenance-mode.php page. It is served with 
+	 * Maintenance Mode is a custom Community Auth feature.
+	 * If you enable maintenance mode, site visitors will
+	 * see the maintenance-mode.php page. It is served with
 	 * a 503 HTTP status header and Retry-After header.
 	 */
 	$ca_maintenance_mode = FALSE;
@@ -38,8 +38,8 @@
 	if( $ca_maintenance_mode )
 	{
 		/**
-		 * When in maintenance mode, the IPs listed here will have 
-		 * normal access to the website, so that developers can be 
+		 * When in maintenance mode, the IPs listed here will have
+		 * normal access to the website, so that developers can be
 		 * working on it while regular site visitors get a 503 page.
 		 */
 		$ca_developer_ips = array(
@@ -51,9 +51,9 @@
 		if( ! in_array( $_SERVER['REMOTE_ADDR'], $ca_developer_ips ) )
 		{
 			/**
-			 * If you have CodeIgniter installed in a sub-directory, 
+			 * If you have CodeIgniter installed in a sub-directory,
 			 * you might need to change the value of public root.
-			 * Site visitors will not see a styled maintenance mode 
+			 * Site visitors will not see a styled maintenance mode
 			 * page if this value is not correct.
 			 */
 			$public_root = $_SERVER['SERVER_NAME'];
@@ -62,9 +62,9 @@
 		}
 
 		/**
-		 * Set the environment you want to be able to work in 
-		 * while site visitors are in maintenance mode. Remember 
-		 * that the database connection is determined by 
+		 * Set the environment you want to be able to work in
+		 * while site visitors are in maintenance mode. Remember
+		 * that the database connection is determined by
 		 * the value of the ENIVONRMENT constant.
 		 */
 		else
@@ -75,7 +75,7 @@
 
 	/**
 	 * Normal environment when not in maintenance mode.
-	 * This is where you would normally set ENVIRONMENT in 
+	 * This is where you would normally set ENVIRONMENT in
 	 * a standard CodeIgniter install.
 	 */
 	else
@@ -97,9 +97,11 @@ if( defined('ENVIRONMENT') )
 	{
 		case 'development':
 		case 'testing':
-			error_reporting(-1);
+			// error_reporting(-1);
+			// ini_set('error_reporting', E_ALL);
+		 ini_set("display_errors", 1);
 		break;
-	
+
 		case 'production':
 			error_reporting(0);
 		break;
