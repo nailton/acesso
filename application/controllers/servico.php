@@ -13,7 +13,7 @@ class Servico extends MY_Controller {
 	public function registro()
 	{
 
-if( $this->input->get('logout') && config_item('show_login_form_on_logout') == FALSE )
+		if( $this->input->get('logout') && config_item('show_login_form_on_logout') == FALSE )
 		{
 			$data = array(
 				'title' => WEBSITE_NAME . ' User Logout Confirmation',
@@ -30,7 +30,7 @@ if( $this->input->get('logout') && config_item('show_login_form_on_logout') == F
 
 			$view_data = $this->registro_crud();
 			$data = array(
-				'title' => 'Registros',
+				'title' => 'Registros de domínios',
 				'content' => $this->load->view( 'servico/registro',$view_data, TRUE ),
 				'javascripts' => array(),
 				'style_sheets' => array(
@@ -42,7 +42,7 @@ if( $this->input->get('logout') && config_item('show_login_form_on_logout') == F
 
 		}
 
-}
+	}
 
 	/**
 	 * Lista dos registros
@@ -57,6 +57,16 @@ if( $this->input->get('logout') && config_item('show_login_form_on_logout') == F
 			'c_titular','c_admin');
 		$crud->set_subject('registro');
 
+    // $crud->unset_columns('senha');
+		// $crud->unset_read_field('senha');
+
+		//Cuidando da senha.
+		$crud->field_type('senha', 'password', '');
+		$crud->callback_before_insert(array($this,'encrypt_password_callback'));
+		$crud->callback_before_update(array($this,'encrypt_password_callback'));
+		$crud->callback_edit_field('senha',array($this,'decrypt_password_callback'));
+
+
 		//não mostrar botão adicionar, editar e deletar.
 		// $crud->unset_add();
 		// $crud->unset_edit();
@@ -67,6 +77,27 @@ if( $this->input->get('logout') && config_item('show_login_form_on_logout') == F
 		return $output;
 	}
 
+	function encrypt_password_callback($post_array, $primary_key = null)
+	{
+		$this->load->library('encrypt');
+
+		$key = 'super-secret-key';
+		$post_array['senha'] = $this->encrypt->encode($post_array['senha'], $key);
+		return $post_array;
+	}
+
+	function decrypt_password_callback($value)
+	{
+		$this->load->library('encrypt');
+
+		$key = 'super-secret-key';
+		$decrypted_password = $this->encrypt->decode($value, $key);
+		return "<input type='password' name='senha' value='$decrypted_password' />";
+	}
+
 }
+
+
+
 /* End of file servico.php */
 /* Location: ./application/controllers/servico.php */
