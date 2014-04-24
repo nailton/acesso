@@ -25,7 +25,7 @@ if( isset( $auth_level ) ){ ?>
 						<!-- /widget-header -->
 						<div class="widget-content">
 							<div class="shortcuts">
-								<a href="servico/registro" class="shortcut">
+								<a href="registro/dominio" class="shortcut">
 									<i class="shortcut-icon icon-globe"></i>
 									<span class="shortcut-label">Registro BR</span>
 								</a>
