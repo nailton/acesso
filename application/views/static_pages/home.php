@@ -55,7 +55,7 @@ if( isset( $auth_level ) ){ ?>
 									<span class="shortcut-label">Administrações</span>
 								</a>
 
-								<a href="javascript:;" class="shortcut">
+								<a href="cliente/" class="shortcut">
 									<i class="shortcut-icon icon-group"></i>
 									<span class="shortcut-label">Clientes</span>
 								</a>
