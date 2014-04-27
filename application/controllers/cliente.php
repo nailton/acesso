@@ -57,13 +57,14 @@ public function registro_crud()
 	$crud->set_table('cliente');
 	$crud->columns('nome_fantasia','email','responsavel');
 	$crud->display_as('nome_fantasia','Empresa')
-	->display_as('telefone', 'Telefone')
-	->display_as('email','E-mail')
-	->display_as('responsavel', 'Responsável')
-	->display_as('data_aniversario','Data de Aniversário')
-	->display_as('site','Site')
-	->display_as('descricao','Descrição');
+			 ->display_as('telefone', 'Telefone')
+			 ->display_as('email','E-mail')
+			 ->display_as('responsavel', 'Responsável')
+			 ->display_as('data_aniversario','Data de Aniversário')
+			 ->display_as('site','Site')
+			 ->display_as('descricao','Descrição');
 	$crud->set_subject('Cliente');
+	$crud->required_fields('nome_fantasia','email','telefone');
 
 	//Gerar export completo
 	// $crud->add_action('Export', '', '','',array($this,'export_all'));
